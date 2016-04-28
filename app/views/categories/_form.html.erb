@@ -1,0 +1,31 @@
+
+<%= form_for(@category) do |f| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+      <ul>
+      <% @category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+    <%= label_tag 'category_engineering', 'engineering' %>
+    <%= check_box_tag 'user_club_pref[category][]' , 'engineering', checked('engineering'), id: 'category_engineering' %>
+
+    <%= label_tag 'category_science', 'science' %>
+    <%= check_box_tag 'user_club_pref[category][]' , 'science', checked('science'), id: 'category_engineering' %>
+
+    <%= label_tag 'category_multi', 'multi' %>
+    <%= check_box_tag 'user_club_pref[category][]' , 'multi', checked('multi'), id: 'category_multi' %>
+
+    <%= label_tag 'category_sports', 'sports' %>
+    <%= check_box_tag 'user_club_pref[category][]' , 'sports', checked('sports'), id: 'category_sports' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

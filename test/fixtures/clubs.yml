@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Name: MyString
+  Admin: MyString
+  NumberOfMembers: 1
+  category: MyString
+
+two:
+  Name: MyString
+  Admin: MyString
+  NumberOfMembers: 1
+  category: MyString

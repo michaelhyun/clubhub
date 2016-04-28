@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :clubs
+  resources :categories
+
+  get 'clubs/display' => 'clubs#display'
+  
   get 'admin/index'
 
   get 'sessions/new'
@@ -10,6 +15,7 @@ Rails.application.routes.draw do
   resources :users
   resources :posts
     
+
 
 get 'admin' => 'admin#index'
 get 'orgpages/index' => 'orgpages#org'
@@ -27,7 +33,7 @@ resources :orgpages
 
   # You can have the root of your site routed with "root"
 
-  root 'admin#index'
+  root 'posts#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
