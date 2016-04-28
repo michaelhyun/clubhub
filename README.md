@@ -7,7 +7,7 @@ CMPE 131 Project
 ```
 git add --all
 ```
-
+asdasdfadfsafd
 ## Commit
 ```
 git commit -a
@@ -17,3 +17,19 @@ git commit -a
 ```
 git push --all
 ```
+
+# vim
+
+```
+:x -> write and quit
+```
+
+```
+:q -> quit
+```
+
+```
+i -> write
+```
+
+something
