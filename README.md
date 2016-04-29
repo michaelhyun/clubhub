@@ -18,6 +18,13 @@ git commit -a
 git push --all
 ```
 
+## Status
+```
+git status
+```
+
+
+
 # vim
 
 ```
