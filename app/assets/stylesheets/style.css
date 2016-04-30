@@ -3030,7 +3030,7 @@
 	#banner {
 		background-attachment: scroll,							fixed;
 		background-color: #666;
-		background-image: url("http://1-background.com/images/meteorites/meteorite-background-seamless-crystals.jpg"), url("http://1-background.com/images/meteorites/meteorite-background-seamless-crystals.jpg");
+		background-image: url("images.jpg"), url("images.jpg");
 		background-position: top left,						center center;
 		background-repeat: repeat,							no-repeat;
 		background-size: auto,							cover;
