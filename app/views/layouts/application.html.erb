@@ -11,17 +11,17 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <style>
-    @font-face {
-    font-family: 'FontAwesome';
-    src: url(font-path('fontawesome-webfont.eot') + '?v=4.4.0');
-    src: url(font-path('fontawesome-webfont.eot') + '?#iefix&v=4.4.0') format('embedded-opentype'),
-         url(font-path('fontawesome-webfont.woff2') + '?v=4.4.0') format('woff2'),
-         url(font-path('fontawesome-webfont.woff') + '?v=4.4.0') format('woff'),
-         url(font-path('fontawesome-webfont.ttf') + '?v=4.4.0') format('truetype'),
-         url(font-path('fontawesome-webfont.svg') + '?v=4.4.0#fontawesomeregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-        }
+        @font-face {
+        font-family: 'FontAwesome';
+        src: url(font-path('fontawesome-webfont.eot') + '?v=4.4.0');
+        src: url(font-path('fontawesome-webfont.eot') + '?#iefix&v=4.4.0') format('embedded-opentype'),
+             url(font-path('fontawesome-webfont.woff2') + '?v=4.4.0') format('woff2'),
+             url(font-path('fontawesome-webfont.woff') + '?v=4.4.0') format('woff'),
+             url(font-path('fontawesome-webfont.ttf') + '?v=4.4.0') format('truetype'),
+             url(font-path('fontawesome-webfont.svg') + '?v=4.4.0#fontawesomeregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+            }
     </style>
 </head>
  
@@ -30,11 +30,11 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><%= link_to 'ClubHub', posts_path %></h1>
+                    <h1><%= link_to 'ClubHub', root_path('index') %></h1>
 					<nav id="nav">
 						<ul>
-                            <li><%= link_to 'Home', posts_path %></li>
-                            <li> <%= link_to 'About ClubHub', clubs_path %> </li>
+                            <li><%= link_to 'Home', root_path('index') %></li>
+                            <li> <%= link_to 'About ClubHub', '/admin/about.html' %> </li>
                             <li><%= link_to 'Find Clubs', categories_path %>
                             <li><a href="#">Events</a></li>
                             <li> <%= link_to 'Sign Up', new_user_path %> </li>
@@ -76,6 +76,5 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-        </div>
 </body>
 </html>

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   get 'clubs/display' => 'clubs#display'
   
-  get 'admin/index'
+  get 'posts/index'
+    
+    get 'admin/about'
 
   get 'sessions/new'
 
@@ -17,7 +19,7 @@ Rails.application.routes.draw do
     
 
 
-get 'admin' => 'admin#index'
+get 'posts' => 'posts#index'
 get 'orgpages/index' => 'orgpages#org'
 
 controller :sessions do 
@@ -33,7 +35,7 @@ resources :orgpages
 
   # You can have the root of your site routed with "root"
 
-  root 'posts#index'
+root 'admin#index' #this is the homepage!
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
