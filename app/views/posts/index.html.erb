@@ -1,0 +1,104 @@
+    	<section id="banner">
+					<h1 style="font-size:150px">ClubHub</h1>
+					<p>Designed by &copy;Codiggers</p>
+
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+							<h2>Introducing the ultimate SJSU club organization finder.</h2>
+							<p>SJSU ClubHub was designed in order to provide students at SJSU the opportunity to learn about the different student organizations on campus. </p>
+						</header>
+						<span class="image featured"><img src="http://campaign.sjsu.edu/cmsimages/SJSU-ACCEL-DM_Page_06.jpg" alt="" /></span>
+					</section>
+
+					<section class="box special features">
+                        <h1>Reviews of the day!</h1>
+						<div class="features-row">
+							<section>
+								<span class="icon major fa-bolt accent2"></span>
+								<h3>Club one</h3>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							</section>
+							<section>
+								<span class="icon major fa-area-chart accent3"></span>
+								<h3>Club two</h3>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							</section>
+						</div>
+						<div class="features-row">
+							<section>
+								<span class="icon major fa-cloud accent4"></span>
+								<h3>Club three</h3>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							</section>
+							<section>
+								<span class="icon major fa-lock accent5"></span>
+								<h3>Club four</h3>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							</section>
+						</div>
+					</section>
+<center><h2>Featured clubs for the month of May</h2></center>
+					<div class="row">
+                        <div class="6u 12u(narrower)">
+
+							<section class="box special">
+								<img src="http://www.swe.uc.edu/_pictures/_logos/swe_logo.jpg" width="300px" height="auto"/>
+								<h3>Society of Women Engineers</h3>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+								<ul class="actions">
+									<li><a href="#" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+
+						</div>
+						<div class="6u 12u(narrower)">
+
+							<section class="box special">
+								<img src="http://www.fuelyourcreativity.com/files/2009/02/logo3.png" width="375px" height="auto"/>
+								<h3>Codiggers</h3>
+								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+								<ul class="actions">
+									<li><a href="#" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+
+						</div>
+					</div>
+
+				</section>
+
+
+
+
+    <div class="margins">
+
+<h1>Newsfeed</h1>
+<div class="row medium-8 large-7 columns">
+<div class="blog-post">
+
+<% @posts.each do |post| %>
+ <h2><%= link_to post.title, post %></h2>
+    <img class="thumbnail" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT3xlrfdjuY8YXjAjTpaRYA8YXUnD1CvxyTifdwIkw7pvjh8MuW">
+
+ <p><%= post.body %></p>
+ <p>
+
+ <%= link_to 'Edit', edit_post_path(post) %>|<%= link_to 'Destroy', post, method: :delete,
+ data: { confirm: 'Are you sure?' } %>
+ </p>
+<% end %>
+    
+
+</div>
+</div>
+    
+</div>
+
+<br>
+
+<p style="margin-left:120px"><%= link_to 'New Post', new_post_path %></p>

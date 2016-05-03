@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @orgpage.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @orgpage.body %>
+</p>
+
+<%= link_to 'Edit', edit_orgpage_path(@orgpages) %> |
+<%= link_to 'Back', orgpages_path %>

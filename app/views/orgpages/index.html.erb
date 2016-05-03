@@ -1,0 +1,31 @@
+<h1>Orgpages#index</h1>
+<p>Find me in app/views/orgpages/index.html.erb</p>
+
+<center>
+<h1>Newsfeed</h1>
+<div class="row medium-8 large-7 columns">
+<div class="organization-page">
+
+<% @orgpage.each do |orgpage| %>
+ <h2><%= link_to orgpage.title, orgpage %></h2>
+    <img class="thumbnail" src="http://placehold.it/850x350">
+
+ <p><%= orgpage.body %></p>
+ <p>
+
+ <%= link_to 'Edit', edit_orgpage_path(orgpage) %>|<%= link_to 'Destroy', orgpage, method: :delete,
+ data: { confirm: 'Are you sure?' } %>
+ </p>
+<% end %>
+    
+
+</div>
+</div>
+    
+</div>
+
+<br>
+
+<%= link_to 'New Organization Page', new_orgpage_path %>
+
+</center>
