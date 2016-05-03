@@ -24,6 +24,13 @@
         }
     </style>
 </head>
+    
+    <% if flash[:notice] -%>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end -%>
+    <% if flash[:error] -%>
+      <p class="error"><%= flash[:error] %></p>
+    <% end -%>
  
     <body class="landing">
 		<div id="page-wrapper">

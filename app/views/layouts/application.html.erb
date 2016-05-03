@@ -39,14 +39,14 @@
                             <li><a href="#">Events</a></li>
                             <li> <%= link_to 'Sign Up', new_user_path %> </li>
 						</ul>
-                         <form class="form-inline">
+                 <form action="/sessions" method="post" class="form-inline">
                   <div class="form-group">
                     <h6>Username</h6>
-                    <input type="text" class="form-control" placeholder="Username">
+                    <input type="email" class="form-control" name="session[username]" placeholder="Username" />
                   </div>
                   <div class="form-group">
                     <h6>Password</h6>
-                    <input type="email" class="form-control" placeholder="**********">
+                      <input type="password" class="form-control" name="session[password]" placeholder="**********" />
                       <button type="submit" class="btn btn-default">Submit</button>
                   </div>
                 </form>

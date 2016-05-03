@@ -17,6 +17,11 @@ Rails.application.routes.draw do
   resources :users
   resources :posts
     
+#    map.connect "/sessions/:status", 
+#    :controller => "sessions",
+#    :action => "index",
+#    :foo => "bar"
+    
 
 
 get 'posts' => 'posts#index'

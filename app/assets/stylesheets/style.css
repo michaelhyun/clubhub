@@ -2003,8 +2003,8 @@
 	}
 
 	input[type="text"],
-	input[type="password"],
 	input[type="email"],
+	input[type="password"],
 	select,
 	textarea {
 		-moz-appearance: none;
@@ -2014,7 +2014,7 @@
 		background: #f8f8f8;
 		border-radius: 6px;
 		border: solid 1px #e5e5e5;
-		color: inherit;
+		color: grey;
 		display: block;
 		outline: 0;
 		padding: 0 1em;
