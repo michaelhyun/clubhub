@@ -1,13 +1,34 @@
-
-
-<h1>Listing clubs</h1>
+<style>
+            body {
+                background: url("assets/images.jpg") repeat;
+            }
+            #banner {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                width: 100%;
+                height: 200px;
+                z-index: -1;
+            }
+    #background{
+        background-color:white;
+    }
+    table{
+        width:60%;  
+    }
+</style>
+    <br><br><br><br><br><br><br><br>
+        <img id="banner" src="assets/images.jpg"/>
+<div id="background">
+    <center><p style="font-size:70px">Listing clubs</p>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Admin</th>
-      <th>Numberofmembers</th>
+      <th>Number of Members</th>
       <th>Category</th>
       <th colspan="3"></th>
     </tr>
@@ -26,8 +47,9 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+    </table>
 
 <br>
 
-<%= link_to 'New Club', new_club_path %>
+<%= link_to 'New Club', new_club_path %></center>
+</div>
