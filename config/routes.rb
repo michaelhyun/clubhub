@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   get 'clubs/display' => 'clubs#display'
   
-    get 'posts/index'
+  get 'posts/index'
+    
+    get 'admin/about'
 
   get 'sessions/new'
 
