@@ -1,21 +1,4 @@
-<style>
-            body {
-                background: url("assets/images.jpg") repeat;
-            }
-            #banner {
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                right: 0px;
-                width: 100%;
-                height: 200px;
-                z-index: -1;
-            }
-    #background{
-        background-color:white;
-    }
-</style>
-        <img id="banner" src="assets/images.jpg"/>
+
 
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>

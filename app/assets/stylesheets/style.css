@@ -3771,3 +3771,17 @@ li {
     display: inline-block;
     padding: 0.5em;
 }
+
+#bannerTemp {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+#background{
+    background-color:white;
+    height:100%;
+}
