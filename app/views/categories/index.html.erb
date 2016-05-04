@@ -1,39 +1,28 @@
-<style>
-            body {
-                background: url("/assets/images.jpg") repeat;
-            }
-            #banner {
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                right: 0px;
-                width: 100%;
-                height: 200px;
-                z-index: -1;
-            }
-    #background{
-        background-color:white;
-    }
-</style><br><br><br><br><br><br><br><br>
-        <img id="banner" src="/assets/images.jpg"/>
+<br><br><br><br><br><br><br><br>
+        <img id="bannerTemp" src="/assets/images.jpg"/>
 <div id="background">
 
 <center>
-<h1>Search By Category</h1>
-
-<table>
-  <thead>
+    <br><br>
+<h1>Search By Category</h1>    
+    <table style="width:70%">
     <tr>
-
-      <th><h2>Genre</h2></th>
-      <th colspan="6"></th>
+        <td><%= link_to 'Academics', clubs_url() %></td>
+        <td><%= link_to 'Engineering', clubs_url() %></td>
+        <td><%= link_to 'Cultural', clubs_url() %></td>
+        <td><%= link_to 'Religious', clubs_url() %></td>
+        <td><%= link_to 'Science', clubs_url() %></td>
+        <td><%= link_to 'Other', clubs_url() %></td>
+        <td><%= link_to 'Service and Social Justice', clubs_url() %></td>
     </tr>
-
-  </thead>
-</table>
-<p><%= link_to 'Sports', clubs_url() %> </p>
-<p><%= link_to 'Multicultural', clubs_url() %> </p>
-<p><%= link_to 'Engineering', clubs_url() %> </p>
-<p><%= link_to 'Science', clubs_url() %> </p>
-<br>
+    <tr>
+        <td><%= link_to 'Performing Arts', clubs_url() %></td>
+        <td><%= link_to 'Greek', clubs_url() %></td>
+        <td><%= link_to 'Arts', clubs_url() %></td>
+        <td><%= link_to 'Health', clubs_url() %></td>
+        <td><%= link_to 'Music', clubs_url() %></td>
+        <td><%= link_to 'Politics', clubs_url() %></td>
+        <td><%= link_to 'Sports', clubs_url() %></td>
+    </tr>
+    </table>
     </center></div>

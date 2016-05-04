@@ -2003,8 +2003,8 @@
 	}
 
 	input[type="text"],
-	input[type="password"],
 	input[type="email"],
+	input[type="password"],
 	select,
 	textarea {
 		-moz-appearance: none;
@@ -2014,7 +2014,7 @@
 		background: #f8f8f8;
 		border-radius: 6px;
 		border: solid 1px #e5e5e5;
-		color: inherit;
+		color: grey;
 		display: block;
 		outline: 0;
 		padding: 0 1em;
@@ -3770,4 +3770,18 @@ ul
 li {
     display: inline-block;
     padding: 0.5em;
+}
+
+#bannerTemp {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+#background{
+    background-color:white;
+    height:100%;
 }
