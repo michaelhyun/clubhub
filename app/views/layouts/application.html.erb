@@ -9,53 +9,72 @@
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <style>
-        .margins{
-            margin-left:120px;
-            float:left;
-        }
-        .sidebar{
-            float:right;
-            width:30%;
-            height:100%;
-            margin-right:120px;
-            margin-top:120px;
-        }
+        @font-face {
+        font-family: 'FontAwesome';
+        src: url(font-path('fontawesome-webfont.eot') + '?v=4.4.0');
+        src: url(font-path('fontawesome-webfont.eot') + '?#iefix&v=4.4.0') format('embedded-opentype'),
+             url(font-path('fontawesome-webfont.woff2') + '?v=4.4.0') format('woff2'),
+             url(font-path('fontawesome-webfont.woff') + '?v=4.4.0') format('woff'),
+             url(font-path('fontawesome-webfont.ttf') + '?v=4.4.0') format('truetype'),
+             url(font-path('fontawesome-webfont.svg') + '?v=4.4.0#fontawesomeregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+            }
     </style>
 </head>
-<body>
-</head>
-<body>
-    <div class="top-bar">
-        <div class="top-bar-left">
-            <ul class="menu">
-                <li class="menu-text"><h2><%= link_to 'ClubHub', posts_path %></h2></li>
-                <li> <%= link_to 'About ClubHub', clubs_path %> </li>
-                <li><%= link_to 'Find Clubs', categories_path %>
-                <li><a href="#">Events</a></li>
-                <li> <%= link_to 'Sign Up', new_user_path %> </li>
-            </ul>
-        </div>
-        <div class="top-bar-right">
-                <ul class="menu">
-                <form class="form-inline">
+ 
+    <body class="landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header" class="alt">
+                    <h1><%= link_to 'ClubHub', root_path('index') %></h1>
+					<nav id="nav">
+						<ul>
+                            <li><%= link_to 'Home', root_path('index') %></li>
+                            <li> <%= link_to 'About ClubHub', '/admin/about.html' %> </li>
+                            <li><%= link_to 'Club Directory', clubs_path %></li>
+                            <li><%= link_to 'Find Clubs', categories_path %></li>
+                            <li> <%= link_to 'Sign Up', new_user_path %> </li>
+						</ul>
+                 <form action="/sessions" method="post" class="form-inline">
                   <div class="form-group">
                     <h6>Username</h6>
-                    <input type="text" class="form-control" placeholder="Username">
+                    <input type="email" class="form-control" name="session[username]" placeholder="Username" />
                   </div>
                   <div class="form-group">
                     <h6>Password</h6>
-                    <input type="email" class="form-control" placeholder="**********">
+                      <input type="password" class="form-control" name="session[password]" placeholder="**********" />
                       <button type="submit" class="btn btn-default">Submit</button>
                   </div>
                 </form>
+					</nav>
+				</header>
+    
 
-            </ul>
 
-        </div>
-
-</div>
         <%= yield %>
 
+        			<!-- Footer -->
+				<footer id="footer">
+					<ul>
+						<li><a href = "www.twitter.com" class="btn btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a></a></li>
+                        <li><a href = "www.facebook.com" class="btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href = "www.instagram.com" class="btn btn-social-icon btn-instagram"><span class="fa fa-instagram"></span></a></li>
+                        <li><a href = "www.github.com" class="btn btn-social-icon btn-github"><span class="fa fa-github"></span></a></li>
+                        <li><a href = "www.google.com" class="btn btn-social-icon btn-google"><span class="fa fa-google"></span></a></li>
+                        </ul>
+					<ul class="copyright">
+						<li>&copy;Codiggers. All rights reserved.</li>
+					</ul>
+				</footer>
+            <script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 </body>
 </html>
