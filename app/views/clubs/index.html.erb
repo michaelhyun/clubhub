@@ -17,7 +17,7 @@
   <tbody>
     <% @clubs.each do |club| %>
       <tr>
-        <td><%= club.Name %></td>
+          <td><%= link_to club.Name, '/orgpages/show.html' %></td>
         <!--<td><%= club.Admin %></td>
         <td><%= club.NumberOfMembers %></td>-->
         <td><%= club.category %></td>
