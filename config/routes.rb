@@ -16,8 +16,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :posts
-    
-
 
 get 'posts' => 'posts#index'
 get 'orgpages/index' => 'orgpages#org'

@@ -1,28 +1,13 @@
-<style>
-            body {
-                background: url("assets/images.jpg") repeat;
-            }
-            #banner {
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                right: 0px;
-                width: 100%;
-                height: 200px;
-                z-index: -1;
-            }
-    #background{
-        background-color:white;
-    }
-</style><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+        <img id="bannerTemp" src="/assets/images.jpg"/>
 <div id="background">
-
-<h1>Listing users</h1>
+<center>
+<h1>All Users</h1>
 <% if notice %>
 <p id="notice" > <%= notice %>
   </p>
   
-<table>
+<table style="width:70%">
   <thead>
     <tr>
       <th>Name</th>
@@ -35,7 +20,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.name %></td>
+          <td><%= link_to user.name, user %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -46,5 +31,5 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+    <%= link_to 'New User', new_user_path %></center>
     <% end %></div>

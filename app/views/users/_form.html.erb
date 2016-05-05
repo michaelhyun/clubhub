@@ -1,21 +1,4 @@
-<style>
-            body {
-                background: url("assets/images.jpg") repeat;
-            }
-            #banner {
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                right: 0px;
-                width: 100%;
-                height: 200px;
-                z-index: -1;
-            }
-    #background{
-        background-color:white;
-    }
-</style>
-        <img id="banner" src="assets/images.jpg"/>
+
 
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
@@ -30,15 +13,15 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div style="width:60%" class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+  <div style="width:60%" class="field">
     <%= f.label :password %><br>
     <%= f.password_field :password %>
   </div>
-  <div class="field">
+  <div style="width:60%" class="field">
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation %>
   </div>
