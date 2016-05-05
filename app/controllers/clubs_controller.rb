@@ -74,7 +74,7 @@ class ClubsController < ApplicationController
     list_of_categories << checked #adds all checked categories into the array
 
     list_of_categories.each do |category| 
-      print(category) #prints the names of the clubs within those categories
+      @club = print(category) #prints the names of the clubs within those categories
     end
   end
 
