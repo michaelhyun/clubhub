@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  
+  get 'clubs/displayTRY' => 'clubs#displayTRY'
+  get 'clubs/show' => 'clubs#show'
   resources :clubs
   resources :categories
 
   get 'clubs/display' => 'clubs#display'
-  
+
+  get 'categories/display' => 'categories#display'
   get 'posts/index'
     
     get 'admin/about'

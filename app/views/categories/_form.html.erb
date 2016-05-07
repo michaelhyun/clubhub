@@ -1,4 +1,3 @@
-
 <%= form_for(@category) do |f| %>
   <% if @category.errors.any? %>
     <div id="error_explanation">
@@ -13,14 +12,23 @@
   <% end %>
 
     <div class="field">
+    <%= label_tag 'category_academics', 'academics' %>
+    <%= check_box_tag 'user_club_pref[category][]' , 'academics', checked('academics'), id: 'category_academics' %>
+
     <%= label_tag 'category_engineering', 'engineering' %>
     <%= check_box_tag 'user_club_pref[category][]' , 'engineering', checked('engineering'), id: 'category_engineering' %>
 
-    <%= label_tag 'category_science', 'science' %>
-    <%= check_box_tag 'user_club_pref[category][]' , 'science', checked('science'), id: 'category_engineering' %>
+    <%= label_tag 'category_cultural', 'cultural' %>
+    <%= check_box_tag 'user_club_pref[category][]' , 'cultural', checked('cultural'), id: 'category_cultural' %>
 
-    <%= label_tag 'category_multi', 'multi' %>
-    <%= check_box_tag 'user_club_pref[category][]' , 'multi', checked('multi'), id: 'category_multi' %>
+    <%= label_tag 'category_religious', 'religious' %>
+    <%= check_box_tag 'user_club_pref[category][]' , 'religious', checked('religious'), id: 'category_religious' %>
+
+    <%= label_tag 'category_science', 'science' %>
+    <%= check_box_tag 'user_club_pref[category][]' , 'science', checked('science'), id: 'category_science' %>
+
+    <%= label_tag 'category_other', 'other' %>
+    <%= check_box_tag 'user_club_pref[category][]' , 'other', checked('other'), id: 'category_other' %>
 
     <%= label_tag 'category_sports', 'sports' %>
     <%= check_box_tag 'user_club_pref[category][]' , 'sports', checked('sports'), id: 'category_sports' %>
