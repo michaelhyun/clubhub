@@ -19,8 +19,6 @@ Rails.application.routes.draw do
   get "sessions/destroy"
 
   resources :users
-  resources :posts
-
 get 'posts' => 'posts#index'
 get 'orgpages/index' => 'orgpages#org'
 
