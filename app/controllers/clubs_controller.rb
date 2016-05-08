@@ -1,5 +1,6 @@
 class ClubsController < ApplicationController
-  before_action :set_club, only: [:show, :edit, :update, :destroy]
+layout "users"
+  before_action :set_club, only: [ :edit, :update, :destroy]
 
 
 
@@ -12,6 +13,62 @@ class ClubsController < ApplicationController
   # GET /clubs/1
   # GET /clubs/1.json
   def show
+    if (params[:param].eql? "Academics")
+      @clubs = Club.where("category = 'Academics'")
+    end
+
+    if (params[:param].eql? "Engineering")
+      @clubs = Club.where("category = 'Engineering'")
+    end
+
+    if (params[:param].eql? "Cultural")
+      @clubs = Club.where("category = 'Cultural'")
+    end
+
+    if (params[:param].eql? "Religious")
+      @clubs = Club.where("category = 'Religious'")
+    end
+
+    if (params[:param].eql? "Science")
+      @clubs = Club.where("category = 'Science'")
+    end
+
+    if (params[:param].eql? "Other")
+      @clubs = Club.where("category = 'Other'")
+    end
+
+    if (params[:param].eql? "Service and Social Justice")
+      @clubs = Club.where("category = 'Service and Social Justice'")
+    end
+
+    if (params[:param].eql? "Performing Arts")
+      @clubs = Club.where("category = 'Performing Arts'")
+    end
+
+    if (params[:param].eql? "Greek")
+      @clubs = Club.where("category = 'Greek'")
+    end
+
+    if (params[:param].eql? "Arts")
+      @clubs = Club.where("category = 'Arts'")
+    end
+
+    if (params[:param].eql? "Health")
+      @clubs = Club.where("category = 'Health'")
+    end
+
+    if (params[:param].eql? "Music")
+      @clubs = Club.where("category = 'Music'")
+    end
+
+    if (params[:param].eql? "Politics")
+      @clubs = Club.where("category = 'Politics'")
+    end
+
+    if (params[:param].eql? "Sports")
+      @clubs = Club.where("category = 'Sports'")
+    end
+
   end
 
   # GET /clubs/new
@@ -23,7 +80,7 @@ class ClubsController < ApplicationController
   def edit
   end
 
- 
+
 
 
   # POST /clubs
@@ -59,6 +116,7 @@ class ClubsController < ApplicationController
   # DELETE /clubs/1
   # DELETE /clubs/1.json
   def destroy
+    @club = Club.find(params[:id])
     @club.destroy
     respond_to do |format|
       format.html { redirect_to clubs_url, notice: 'Club was successfully destroyed.' }
@@ -66,35 +124,15 @@ class ClubsController < ApplicationController
     end
   end
 
-
-  def display
-
-    list_of_categories = Array.new #creates a new Array
-
-    list_of_categories << checked #adds all checked categories into the array
-
-    list_of_categories.each do |category| 
-      @club = print(category) #prints the names of the clubs within those categories
-    end
-  end
-
-
-
   private
     # Use callbacks to share common setup or constraints between actions.
+
     def set_club
       @club = Club.find(params[:id])
-
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def club_params
-      params.require(:club).permit(:Name, :Admin, :NumberOfMembers, :category)
+      params.require(:club).permit(:Name, :admin, :numberOfMembers, :category)
     end
   end
-
-
-
-
-
-  

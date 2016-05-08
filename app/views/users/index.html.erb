@@ -1,35 +1,124 @@
-<br><br><br><br><br><br><br><br>
-        <img id="bannerTemp" src="/assets/images.jpg"/>
-<div id="background">
-<center>
-<h1>All Users</h1>
-<% if notice %>
-<p id="notice" > <%= notice %>
-  </p>
-  
-<table style="width:70%">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ClubHub</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <%= stylesheet_link_tag  "style" %>
+    <%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <style>
+    @font-face {
+    font-family: 'FontAwesome';
+    src: url(font-path('fontawesome-webfont.eot') + '?v=4.4.0');
+    src: url(font-path('fontawesome-webfont.eot') + '?#iefix&v=4.4.0') format('embedded-opentype'),
+         url(font-path('fontawesome-webfont.woff2') + '?v=4.4.0') format('woff2'),
+         url(font-path('fontawesome-webfont.woff') + '?v=4.4.0') format('woff'),
+         url(font-path('fontawesome-webfont.ttf') + '?v=4.4.0') format('truetype'),
+         url(font-path('fontawesome-webfont.svg') + '?v=4.4.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+        }
+    </style>
+</head>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-          <td><%= link_to user.name, user %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <% if flash[:notice] -%>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end -%>
+    <% if flash[:error] -%>
+      <p class="error"><%= flash[:error] %></p>
+    <% end -%>
 
-<br>
+    <body class="landing">
+		<div id="page-wrapper">
 
-    <%= link_to 'New User', new_user_path %></center>
-    <% end %></div>
+    	<section id="banner">
+					<h1 style="font-size:150px">ClubHub</h1>
+					<p>Designed by &copy;Codiggers</p>
+
+				</section>
+
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+							<h2>Introducing the ultimate SJSU club organization finder.</h2>
+							<p>SJSU ClubHub was designed in order to provide students at SJSU the opportunity to get involved in the variety of student organizations on campus. </p>
+						</header>
+						<span class="image featured"><img src="/assets/SJSU.jpg" alt="" /></span>
+					</section>
+
+					<section class="box special features">
+                        <h1>Reviews of the day!</h1>
+						<div class="features-row">
+							<section>
+								<!-- <span class="icon major fa-bolt accent2"></span> -->
+								<img src="https://ewb.web.lehigh.edu/sites/ewb.web.lehigh.edu/files/EWB-USA_logo.jpg" width="200px" height="auto"/>
+								<h3>Engineering Without Borders</h3>
+								<p>"I love what Engineering without Borders aims to do as a club! With our projects, we are able to help communities in need throughout the world!"</p>
+							</section>
+							<section>
+								<!-- <span class="icon major fa-area-chart accent3"></span> -->
+								<img src="http://spartan-hacks.com/assets/images/iclublogo.jpg" width="200px" height="auto"/>
+								<h3>Innovation Club</h3>
+								<p>"Innovation Club allowed me to collaborate with students with different majors to create projects!"</p>
+							</section>
+						</div>
+						<div class="features-row">
+							<section>
+								<!--<span class="icon major fa-cloud accent4"></span> -->
+								<img src="https://yt3.ggpht.com/-fS4M_iwWcCE/AAAAAAAAAAI/AAAAAAAAAAA/CsgMQmeXaGs/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" width="200px" height="auto"/>
+								<h3>Pitch Please</h3>
+								<p>"I love how everyone brings their own unique style to the table and I'm looking forward to perform with our wonderful group again!"</p>
+							</section>
+							<section>
+								<!--<span class="icon major fa-lock accent5"></span>-->
+								<img src="http://media.premiumtimesng.com/wp-content/files/2015/08/UNicef-logo.png" width="200px" height="auto"/>
+								<h3>UNICEF SJSU</h3>
+								<p>"Being a part of this club makes me appreciate the privilege of getting an education more. I am so glad this club aims to help children all over the world get the education they deserve!"</p>
+							</section>
+						</div>
+					</section>
+<center><h2>Featured clubs for the month of May</h2></center>
+					<div class="row">
+                        <div class="6u 12u(narrower)">
+
+							<section class="box special">
+								<img src="http://www.swe.uc.edu/_pictures/_logos/swe_logo.jpg" width="300px" height="auto"/>
+								<h3>Society of Women Engineers</h3>
+								<p>Lighting the way for women in engineering.</p>
+								<ul class="actions">
+									<li><a href="#" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+
+						</div>
+						<div class="6u 12u(narrower)">
+
+							<section class="box special">
+								<img src="http://www.fuelyourcreativity.com/files/2009/02/logo3.png" width="375px" height="auto"/>
+								<h3>Codiggers</h3>
+								<p>Codiggers is one of the hottest clubs on SJSU's campus! With only 4 members, Codiggers is a progressive group that makes cool websites like the one you're on right now!</p>
+								<ul class="actions">
+									<li><a href="#" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+
+						</div>
+					</div>
+
+				</section>
+
+            <script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+        </div>
+</body>
+</html>
