@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+
+
+  get 'clubs/show' => 'clubs#show'
   resources :clubs
   resources :categories
 
   get 'clubs/display' => 'clubs#display'
-  
+
+  get 'categories/display' => 'categories#display'
   get 'posts/index'
-    
+
     get 'admin/about'
 
   get 'sessions/new'
@@ -15,12 +19,10 @@ Rails.application.routes.draw do
   get "sessions/destroy"
 
   resources :users
-  resources :posts
-
 get 'posts' => 'posts#index'
 get 'orgpages/index' => 'orgpages#org'
 
-controller :sessions do 
+controller :sessions do
 get 'login' => :new
 post 'login' => :create
 delete 'logout' => :destroy
@@ -83,5 +85,5 @@ root 'admin#index' #this is the homepage!
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
- 
+
 end
