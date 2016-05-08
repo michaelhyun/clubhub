@@ -1,4 +1,5 @@
 class AdminController < ApplicationController
+	layout "users"
     def index
         render
     end

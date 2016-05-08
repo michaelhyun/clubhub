@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  layout "users"
   before_action :set_category, only: []
 
   # GET /categories

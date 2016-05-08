@@ -1,4 +1,6 @@
 class ClubsController < ApplicationController
+    layout "users"
+
   before_action :set_club, only: [ :edit, :update, :destroy]
 
 

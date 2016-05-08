@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController::Base 
+    layout "users"
 	skip_before_action :authorize
   def new
       @session = Session.new
