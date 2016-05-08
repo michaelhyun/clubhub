@@ -1,21 +1,21 @@
-class SessionsController < ApplicationController::Base 
-    layout "users"
-	skip_before_action :authorize
+class SessionsController < ApplicationController::Base
+    	layout "users"
+    	skip_before_action :authorize
   def new
       @session = Session.new
   end
-    def index 
+    def index
         if params[:status] == "activated"
-            @session = Session.activated 
-        else 
+            @session = Session.activated
+        else
             @session = Session.unactivated
-        end 
-    end 
-    def create 
+        end
+    end
+    def create
         @session = Session.new(params[:session])
         if @session.save
             redirect_to @session
-        else 
+        else
             render :action => "new"
         end
     end

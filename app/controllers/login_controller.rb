@@ -1,6 +1,5 @@
 class LoginsController < ApplicationController
-    layout "users"
-
+  layout "public"
   # "Create" a login, aka "log the user in"
   def create
     if user = User.authenticate(params[:username], params[:password])

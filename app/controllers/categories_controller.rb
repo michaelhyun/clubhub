@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  layout "users"
+layout "users"
   before_action :set_category, only: []
 
   # GET /categories
@@ -10,17 +10,17 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1
   # GET /categories/1.json
-  
+
 
   # GET /categories/new
-  
+
 
   # GET /categories/1/edit
- 
+
 
   # POST /categories
   # POST /categories.json
-  
+
 
   # PATCH/PUT /categories/1
   # PATCH/PUT /categories/1.json

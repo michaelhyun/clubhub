@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  layout "users"
+layout "users"
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 #skip_before_action :authorize , only: [:new, :create, :index]
 
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
-    end 
+    end
   end
 
   private
