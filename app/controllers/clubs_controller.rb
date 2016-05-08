@@ -1,4 +1,5 @@
 class ClubsController < ApplicationController
+layout "users"
   before_action :set_club, only: [ :edit, :update, :destroy]
 
 
@@ -14,23 +15,23 @@ class ClubsController < ApplicationController
   def show
     if (params[:param].eql? "Academics")
       @clubs = Club.where("category = 'Academics'")
-    end 
+    end
 
     if (params[:param].eql? "Engineering")
       @clubs = Club.where("category = 'Engineering'")
-    end 
+    end
 
     if (params[:param].eql? "Cultural")
       @clubs = Club.where("category = 'Cultural'")
-    end 
+    end
 
     if (params[:param].eql? "Religious")
       @clubs = Club.where("category = 'Religious'")
-    end 
+    end
 
     if (params[:param].eql? "Science")
       @clubs = Club.where("category = 'Science'")
-    end 
+    end
 
     if (params[:param].eql? "Other")
       @clubs = Club.where("category = 'Other'")
@@ -79,7 +80,7 @@ class ClubsController < ApplicationController
   def edit
   end
 
- 
+
 
 
   # POST /clubs
@@ -135,4 +136,3 @@ class ClubsController < ApplicationController
       params.require(:club).permit(:Name, :admin, :numberOfMembers, :category)
     end
   end
-
