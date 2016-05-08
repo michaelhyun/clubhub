@@ -13,6 +13,7 @@ layout "users"
   # GET /clubs/1
   # GET /clubs/1.json
   def show
+    # @clubs = Club.where(category: :param)
     if (params[:param].eql? "Academics")
       @clubs = Club.where("category = 'Academics'")
     end

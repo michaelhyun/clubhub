@@ -11,39 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425213300) do
+ActiveRecord::Schema.define(version: 20160508122026) do
 
   create_table "categories", force: true do |t|
     t.string   "genre"
+    t.string   "clubs"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "clubs", force: true do |t|
-    t.string   "Name"
-    t.string   "Admin"
-    t.integer  "NumberOfMembers"
+    t.string   "name"
+    t.string   "admin"
+    t.string   "numberOfMembers"
+    t.text     "description"
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "comments", force: true do |t|
-    t.string   "author"
-    t.text     "body"
-    t.integer  "post_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "comments", ["post_id"], name: "index_comments_on_post_id"
-
-  create_table "posts", force: true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "author"
   end
 
   create_table "users", force: true do |t|

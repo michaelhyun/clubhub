@@ -4,39 +4,17 @@
 
 <center>
     <br><br>
-<h1>Search By Category</h1>    
+<h1>Search By Category</h1>
     <table style="width:60%">
-    <tr>
-        
-        <td><%= link_to('Academics',{:controller => 'clubs',:action => 'show', :param =>'Academics'})%></td>
+    <!-- <tr> -->
+      <tbody>
+        <% @categories.each do |category| %>
+          <tr>
+            <td><%= link_to category.genre, category_path(category.id) %></td>
 
-        <td><%= link_to('Engineering',{:controller => 'clubs',:action => 'show', :param =>'Engineering'})%></td> 
+          </tr>
+        <% end %>
+      </tbody>
 
-        <td><%= link_to('Cultural', {:controller => 'clubs',:action => 'show', :param =>'Cultural'}) %></td>
-
-        <td><%= link_to('Religious',{:controller => 'clubs',:action => 'show', :param =>'Religious'}) %></td>
-
-        <td><%= link_to('Science', {:controller => 'clubs',:action => 'show', :param =>'Science'})%></td>
-
-        <td><%= link_to('Other', {:controller => 'clubs',:action => 'show', :param =>'Other'}) %></td>
-
-        <td><%= link_to('Service and Social Justice', {:controller => 'clubs',:action => 'show', :param =>'Service and Social Justice'}) %></td>
-    </tr>
-
-    <tr>
-        <td><%= link_to('Performing Arts', {:controller => 'clubs',:action => 'show', :param =>'Performing Arts'}) %></td>
-
-        <td><%= link_to('Greek',{:controller => 'clubs',:action => 'show', :param =>'Greek'}) %></td>
-
-        <td><%= link_to('Arts', {:controller => 'clubs',:action => 'show', :param =>'Arts'}) %></td>
-
-        <td><%= link_to('Health', {:controller => 'clubs',:action => 'show', :param =>'Health'})%></td>
-
-        <td><%= link_to('Music', {:controller => 'clubs',:action => 'show', :param =>'Music'}) %></td>
-
-        <td><%= link_to('Politics', {:controller => 'clubs',:action => 'show', :param =>'Politics'}) %></td>
-
-        <td><%= link_to('Sports',{:controller => 'clubs',:action => 'show', :param =>'Sports'})%></td>
-    </tr>
     </table>
     </center></div>
