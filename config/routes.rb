@@ -8,14 +8,12 @@ Rails.application.routes.draw do
   get 'clubs/display' => 'clubs#display'
 
   get 'categories/display' => 'categories#display'
-  get 'posts/index'
 
-    get 'admin/about'
+
+  get 'admin/about'
 
   get 'sessions/new'
-
   get "sessions/create"
-
   get "sessions/destroy"
     
   resources :users
@@ -24,7 +22,7 @@ get 'signup' => 'users#new'
 resources :users
     
 get 'posts' => 'posts#index'
-get 'orgpages/index' => 'orgpages#org'
+
 
 controller :sessions do
 get 'login' => :new
@@ -32,7 +30,7 @@ post 'login' => :create
 delete 'logout' => :destroy
     resources :users
 end
-resources :orgpages
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

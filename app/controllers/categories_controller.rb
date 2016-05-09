@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
 layout "users"
-  before_action :set_category, only: []
+
 
   # GET /categories
   # GET /categories.json
@@ -10,6 +10,66 @@ layout "users"
 
   # GET /categories/1
   # GET /categories/1.json
+  def show
+
+  if (params[:param].eql? "Academics")
+    @categories = Category.where(genre: 'Academics')
+  end
+
+  if (params[:param].eql? "Engineering")
+    @categories = Category.where(genre: 'Engineering')
+  end
+
+  if (params[:param].eql? "Cultural")
+    @categories = Category.where(genre: 'Cultural')
+  end
+
+  if (params[:param].eql? "Religious")
+    @categories = Category.where(genre: 'Religious')
+  end
+
+  if (params[:param].eql? "Science")
+    @categories = Category.where(genre: 'Science')
+  end
+
+  if (params[:param].eql? "Other")
+    @categories = Category.where(genre: 'Other')
+  end
+
+  if (params[:param].eql? "Service and Social Justice")
+    @categories = Category.where(genre: 'Service and Social Justice')
+  end
+
+  if (params[:param].eql? "Performing Arts")
+    @categories = Category.where(genre: 'Performing Arts')
+  end
+
+  if (params[:param].eql? "Greek")
+    @categories = Category.where(genre: 'Greek')
+  end
+
+  if (params[:param].eql? "Arts")
+    @categories = Category.where(genre: 'Arts')
+  end
+
+  if (params[:param].eql? "Health")
+    @categories = Category.where(genre: 'Health')
+  end
+
+  if (params[:param].eql? "Music")
+    @categories = Category.where(genre: 'Music')
+  end
+
+  if (params[:param].eql? "Politics")
+    @categories = Category.where(genre: 'Politics')
+  end
+
+  if (params[:param].eql? "Sports")
+    @categories = Category.where(genre: 'Sports')
+  end
+
+end
+
 
 
   # GET /categories/new
@@ -49,11 +109,11 @@ layout "users"
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.find(params[:id])
+      @categories = Category.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:genre)
+      params.require(:category).permit(:genre, :clubs)
     end
-end
+   end
