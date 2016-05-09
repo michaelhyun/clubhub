@@ -1,4 +1,6 @@
-class SessionsController < ActionController::Base
+class SessionsController < ApplicationController::Base
+    	layout "users"
+    	skip_before_action :authorize
   def new
   end
 
