@@ -24,18 +24,18 @@
         }
     </style>
 </head>
-
-    <% if flash[:notice] -%>
-      <p class="notice"><%= flash[:notice] %></p>
-    <% end -%>
-    <% if flash[:error] -%>
-      <p class="error"><%= flash[:error] %></p>
-    <% end -%>
-
     <body class="landing">
 		<div id="page-wrapper">
 
     	<section id="banner">
+            
+            <center>
+    <% if flash[:notice] -%>
+      <h1 class="notice"><%= flash[:notice] %></h1>
+    <% end -%>
+    <% if flash[:error] -%>
+      <h1 class="error"><%= flash[:error] %></h1>
+    <% end -%></center>
 					<h1 style="font-size:150px">ClubHub</h1>
 					<p>Designed by &copy;Codiggers</p>
 
@@ -83,7 +83,7 @@
 							</section>
 						</div>
 					</section>
-<center><h2>Featured clubs for the month of May</h2></center>
+                    <center><h2>Featured clubs for the month of May</h2></center>
 					<div class="row">
                         <div class="6u 12u(narrower)">
 
