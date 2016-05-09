@@ -36,23 +36,9 @@
                             <li><%= link_to 'Home', root_path('index') %></li>
                             <li> <%= link_to 'About ClubHub', '/admin/about.html' %> </li>
                             <li> <%= link_to 'Sign Up', new_user_path %> </li>
+                            <li> <%= link_to 'Log In', login_path %> </li>
 						</ul>
-                 <form action="/sessions" method="post" class="form-inline">
-                  <div class="form-group">
-
-                    <h6>Username</h6>
-                    <input type="email" class="form-control" name="session[username]" placeholder="Username" />
-                  </div>
-
-                  <div class="form-group">
-                    <h6>Password</h6>
-                      <input type="password" class="form-control" name="session[password]" placeholder="**********" />
-
-                      <button type="submit" class="btn btn-default">Submit</button>
-
-
-                  </div>
-                </form>
+                
 					</nav>
 				</header>
 

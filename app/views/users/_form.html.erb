@@ -1,4 +1,8 @@
-
+<style>label {
+   width: 1000px;
+   display: inline-block;
+   text-align: left;
+}</style>
 
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
@@ -13,15 +17,23 @@
     </div>
   <% end %>
 
-  <div style="width:60%" class="field">
+  <div style="width:40%" class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div style="width:60%" class="field">
+  <div style="width:40%" class="field">
+      <%= f.label :username %><br>
+      <%= f.text_field :username %>
+  </div>
+  <div style="width:40%" class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+  </div>
+  <div style="width:40%" class="field">
     <%= f.label :password %><br>
     <%= f.password_field :password %>
   </div>
-  <div style="width:60%" class="field">
+  <div style="width:40%" class="field">
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation %>
   </div>

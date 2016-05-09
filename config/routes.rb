@@ -17,8 +17,12 @@ Rails.application.routes.draw do
   get "sessions/create"
 
   get "sessions/destroy"
-
+    
   resources :users
+    
+get 'signup' => 'users#new'
+resources :users
+    
 get 'posts' => 'posts#index'
 get 'orgpages/index' => 'orgpages#org'
 
@@ -26,7 +30,7 @@ controller :sessions do
 get 'login' => :new
 post 'login' => :create
 delete 'logout' => :destroy
-
+    resources :users
 end
 resources :orgpages
 
