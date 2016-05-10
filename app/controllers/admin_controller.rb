@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  layout "users"
+  layout "public"
     def index
         render
     end
