@@ -13,6 +13,7 @@ layout "users"
   # GET /clubs/1
   # GET /clubs/1.json
   def show
+<<<<<<< HEAD
     # @clubs = Club.where(category: :param)
     if (params[:param].eql? "Academics")
       @clubs = Club.where("category = 'Academics'")
@@ -70,6 +71,9 @@ layout "users"
       @clubs = Club.where("category = 'Sports'")
     end
 
+=======
+    @club = Club.where(name: params[:param])
+>>>>>>> origin/ka-branch
   end
 
   # GET /clubs/new

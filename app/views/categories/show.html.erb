@@ -19,9 +19,18 @@
 <p>
   <tbody>
     <%  @name = Category.find(params[:id]) %>
-    <%= @name.clubs%>
-  </tbody>
-</p>
+    <% @name.clubs.each do |club| %>
+          <tr>
+            <td><%= link_to(club.name, club_path(club.id)) %></td>
+            <td><%= club.admin %></td>
+            <td><%= club.numberOfMembers %></td>
+            <td><%= club.category.try(:genre) %></td>
+            <br><br>
+
+          </tr>
+    <% end %>
+        </tbody>
+      </p>
 
 <br>
 </div>
