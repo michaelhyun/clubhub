@@ -6,6 +6,7 @@
 
 <p id="notice"><%= notice %></p>
 
+<img src="http://www.sjsu.edu/provost/pics/SJSU%20University%20Spirit%20mark_Web_Blue.png">
 <p>
   <strong>Club:</strong>
   <% @club = Club.find(params[:id]) %>
@@ -23,6 +24,7 @@
   <%=@club.numberOfMembers%>
 </p>
 
+<h2> <%= link_to 'Make a New Review', new_review_path %> </h2>
 
 </p>
  |

@@ -3,22 +3,16 @@ Rails.application.routes.draw do
 
   resources :reviews
 
-  get 'clubs/show' => 'clubs#show'
-  resources :clubs
-  resources :categories
+get 'clubs/show' => 'clubs#show'
+	resources :clubs
+	resources :categories
 
-  get 'clubs/display' => 'clubs#display'
+get 'clubs/display' => 'clubs#display'
 
-  get 'categories/display' => 'categories#display'
+get 'categories/display' => 'categories#display'
 
 
-  get 'admin/about'
-
-#  get 'sessions/new'
-#  get "sessions/create"
-#  get "sessions/destroy"
-#    resources :users
-    
+get 'admin/about'
 
 get 'signup' => 'users#new'
 	resources :users
