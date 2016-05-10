@@ -15,9 +15,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-</table>
 
-<p>
   <tbody>
     <%  @name = Category.find(params[:id]) %>
     <% @name.clubs.each do |club| %>
@@ -26,12 +24,11 @@
             <td><%= club.admin %></td>
             <td><%= club.numberOfMembers %></td>
             <td><%= club.category.try(:genre) %></td>
-            <br><br>
 
           </tr>
     <% end %>
         </tbody>
-      </p>
+</table>
 
 <br>
 </div>
