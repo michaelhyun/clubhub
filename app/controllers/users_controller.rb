@@ -27,18 +27,18 @@ layout "users"
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(users_params)
+	@user = User.new
     respond_to do |format|
       if @user.save
+		redirect_to @user, notice: 'User was successfully created'
         format.html { redirect_to users_url, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-		render "new"
+		render action: "new"
+	  end
     end
-
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update

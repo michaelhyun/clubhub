@@ -12,6 +12,9 @@ gem 'rack', '1.5.5'
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 
+gem 'simple_form'
+gem 'bootstrap-sass', '~>2.3.1.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
