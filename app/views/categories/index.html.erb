@@ -10,8 +10,7 @@
       <tbody>
         <% @categories.each do |category| %>
           <tr>
-            <td><%= link_to category.genre, category_path(category.id) %></td>
-
+            <td><%= link_to(category.genre, category_path(category.id)) %></td>
           </tr>
         <% end %>
       </tbody>

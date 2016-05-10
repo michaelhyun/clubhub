@@ -11,69 +11,25 @@ layout "users"
   # GET /categories/1
   # GET /categories/1.json
   def show
-
-  if (params[:param].eql? "Academics")
-    @categories = Category.where(genre: 'Academics')
+    @categories = Category.where(genre: params[:param])
   end
-
-  if (params[:param].eql? "Engineering")
-    @categories = Category.where(genre: 'Engineering')
-  end
-
-  if (params[:param].eql? "Cultural")
-    @categories = Category.where(genre: 'Cultural')
-  end
-
-  if (params[:param].eql? "Religious")
-    @categories = Category.where(genre: 'Religious')
-  end
-
-  if (params[:param].eql? "Science")
-    @categories = Category.where(genre: 'Science')
-  end
-
-  if (params[:param].eql? "Other")
-    @categories = Category.where(genre: 'Other')
-  end
-
-  if (params[:param].eql? "Service and Social Justice")
-    @categories = Category.where(genre: 'Service and Social Justice')
-  end
-
-  if (params[:param].eql? "Performing Arts")
-    @categories = Category.where(genre: 'Performing Arts')
-  end
-
-  if (params[:param].eql? "Greek")
-    @categories = Category.where(genre: 'Greek')
-  end
-
-  if (params[:param].eql? "Arts")
-    @categories = Category.where(genre: 'Arts')
-  end
-
-  if (params[:param].eql? "Health")
-    @categories = Category.where(genre: 'Health')
-  end
-
-  if (params[:param].eql? "Music")
-    @categories = Category.where(genre: 'Music')
-  end
-
-  if (params[:param].eql? "Politics")
-    @categories = Category.where(genre: 'Politics')
-  end
-
-  if (params[:param].eql? "Sports")
-    @categories = Category.where(genre: 'Sports')
-  end
-
-end
 
 
 
   # GET /categories/new
+def create 
+     @category = Category.new(category_params)
 
+    respond_to do |format|
+      if @category.save
+        format.html { redirect_to @category, notice: 'Category was successfully created.' }
+        format.json { render :show, status: :created, location: @category }
+      else
+        format.html { render :new }
+        format.json { render json: @category.errors, status: :unprocessable_entity }
+      end
+    end
+end
 
   # GET /categories/1/edit
 

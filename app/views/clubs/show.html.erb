@@ -16,7 +16,7 @@
 </p>
 <p>
   <h2> Category </h2>
-  <%=@club.category%>
+  <%=@club.category.try(:genre)%>
 </p>
 <p>
   <h2> Number of Members </h2>
