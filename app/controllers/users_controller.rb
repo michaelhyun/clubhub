@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-layout "users"
+layout "public"
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 #skip_before_action :authorize , only: [:new, :create, :index]
 
@@ -78,4 +78,5 @@ layout "users"
     def user_params
         params.require(:user).permit(:name, :username, :email, :password, :password_confirmation)
     end
+end
 end
