@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160510060008) do
-=======
-ActiveRecord::Schema.define(version: 20160510015805) do
->>>>>>> origin/ka-branch
+ActiveRecord::Schema.define(version: 20160510210938) do
 
   create_table "categories", force: true do |t|
     t.string   "genre"
@@ -32,9 +28,20 @@ ActiveRecord::Schema.define(version: 20160510015805) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
+    t.integer  "rating"
+    t.text     "reviews"
   end
 
   add_index "clubs", ["category_id"], name: "index_clubs_on_category_id"
+
+  create_table "reviews", force: true do |t|
+    t.string   "rating"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "review_id"
+    t.integer  "club_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

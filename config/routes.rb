@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :reviews
+
   get 'clubs/show' => 'clubs#show'
   resources :clubs
   resources :categories
