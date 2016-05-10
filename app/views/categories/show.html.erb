@@ -2,7 +2,8 @@
         <img id="bannerTemp" src="/assets/images.jpg"/>
 <div id="background">
 
-    <center><p style="font-size:70px">Club Directory</p>
+    <%  @name = Category.find(params[:id]) %>
+    <center><p style="font-size:70px"><%= @name.try(:genre) + ' Clubs' %></p>
 
 <table style="width:50%">
   <thead>

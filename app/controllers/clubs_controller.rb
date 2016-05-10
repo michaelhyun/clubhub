@@ -13,67 +13,7 @@ layout "users"
   # GET /clubs/1
   # GET /clubs/1.json
   def show
-<<<<<<< HEAD
-    # @clubs = Club.where(category: :param)
-    if (params[:param].eql? "Academics")
-      @clubs = Club.where("category = 'Academics'")
-    end 
-
-    if (params[:param].eql? "Engineering")
-      @clubs = Club.where("category = 'Engineering'")
-    end 
-
-    if (params[:param].eql? "Cultural")
-      @clubs = Club.where("category = 'Cultural'")
-    end 
-
-    if (params[:param].eql? "Religious")
-      @clubs = Club.where("category = 'Religious'")
-    end 
-
-    if (params[:param].eql? "Science")
-      @clubs = Club.where("category = 'Science'")
-    end 
-
-    if (params[:param].eql? "Other")
-      @clubs = Club.where("category = 'Other'")
-    end
-
-    if (params[:param].eql? "Service and Social Justice")
-      @clubs = Club.where("category = 'Service and Social Justice'")
-    end
-
-    if (params[:param].eql? "Performing Arts")
-      @clubs = Club.where("category = 'Performing Arts'")
-    end
-
-    if (params[:param].eql? "Greek")
-      @clubs = Club.where("category = 'Greek'")
-    end
-
-    if (params[:param].eql? "Arts")
-      @clubs = Club.where("category = 'Arts'")
-    end
-
-    if (params[:param].eql? "Health")
-      @clubs = Club.where("category = 'Health'")
-    end
-
-    if (params[:param].eql? "Music")
-      @clubs = Club.where("category = 'Music'")
-    end
-
-    if (params[:param].eql? "Politics")
-      @clubs = Club.where("category = 'Politics'")
-    end
-
-    if (params[:param].eql? "Sports")
-      @clubs = Club.where("category = 'Sports'")
-    end
-
-=======
     @club = Club.where(name: params[:param])
->>>>>>> origin/ka-branch
   end
 
   # GET /clubs/new
