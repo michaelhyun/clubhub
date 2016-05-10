@@ -1,22 +1,26 @@
+<br><br><br><br><br><br><br><br>
+        <img id="bannerTemp" src="/assets/images.jpg"/>
+<div id="background">
 
-<div>
-<% if flash[:alert] %>
-<p id="notice">
-	<%= flash[:alert] %> 
-</p>
-<% end %>
-<% form_tag do %>
-<fieldset>
-<legend>Please log in</legend>
-	<div>
-<%= label_tag :name , 'Name' %>
-<%= text_field_tag :name , params[:name] %>
-<%= label_tag :password , 'Password' %>
-<%= password_field_tag :password, params[:password] %>
-	</div>
-		<div>
-<%= submit_tag "Login" %>
-		</div>
-</fieldset>
-<% end %>
+<% provide(:title, "Log in") %>
+    <center><h1>Log in</h1></center>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
 </div>
+</div>
+
+<%= render template: "layouts/public"%>

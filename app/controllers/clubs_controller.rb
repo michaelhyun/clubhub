@@ -16,23 +16,23 @@ layout "users"
     # @clubs = Club.where(category: :param)
     if (params[:param].eql? "Academics")
       @clubs = Club.where("category = 'Academics'")
-    end
+    end 
 
     if (params[:param].eql? "Engineering")
       @clubs = Club.where("category = 'Engineering'")
-    end
+    end 
 
     if (params[:param].eql? "Cultural")
       @clubs = Club.where("category = 'Cultural'")
-    end
+    end 
 
     if (params[:param].eql? "Religious")
       @clubs = Club.where("category = 'Religious'")
-    end
+    end 
 
     if (params[:param].eql? "Science")
       @clubs = Club.where("category = 'Science'")
-    end
+    end 
 
     if (params[:param].eql? "Other")
       @clubs = Club.where("category = 'Other'")
@@ -81,7 +81,7 @@ layout "users"
   def edit
   end
 
-
+ 
 
 
   # POST /clubs
@@ -137,3 +137,4 @@ layout "users"
       params.require(:club).permit(:Name, :admin, :numberOfMembers, :category)
     end
   end
+

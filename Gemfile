@@ -6,6 +6,8 @@ gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '1.3.11', group: [:development, :test]
 
+gem 'rack', '1.5.5'
+
 # gems required by Heroku
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
