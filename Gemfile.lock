@@ -60,11 +60,6 @@ GEM
     minitest (5.8.4)
     multi_json (1.12.0)
     pg (0.18.4)
-<<<<<<< HEAD
-    pg (0.18.4-x64-mingw32)
-    pg (0.18.4-x86-mingw32)
-=======
->>>>>>> f2a25440105d9447d71f7bc42a21cdb31f5a5fdc
     rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -113,11 +108,6 @@ GEM
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.11)
-<<<<<<< HEAD
-    sqlite3 (1.3.11-x64-mingw32)
-    sqlite3 (1.3.11-x86-mingw32)
-=======
->>>>>>> f2a25440105d9447d71f7bc42a21cdb31f5a5fdc
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -152,9 +142,3 @@ DEPENDENCIES
   turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)
-<<<<<<< HEAD
-=======
-
-BUNDLED WITH
-   1.12.3
->>>>>>> f2a25440105d9447d71f7bc42a21cdb31f5a5fdc
