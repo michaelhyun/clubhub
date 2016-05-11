@@ -3,16 +3,28 @@ layout "users"
 skip_before_action :authorize
   def new
   end
-
-	def create
-		user = User.authenticate(params[:session][:email], params[:session][:password])
-		if user.nil?
-			flash.now[:error] = "Invalid email/password combination."
-			render :new
-		else
-			login user
-			redirect_to user
+	
+	def email
+		session[:email] = @user.email
 	end
+	def password
+		session[:password] = @user.password
+	end
+  
+  def reset
+    reset_session
+	  redirect_to root_url
+  end
+
+#	def create
+#		user = User.authenticate(params[:session][:email], params[:session][:password])
+#		if user.nil?
+#			flash.now[:error] = "Invalid email/password combination."
+#			render :new
+#		else
+#			login user
+#			redirect_to user
+#	end
 #  def create
 #    user = User.find_by(email: params[:session][:email].downcase)
 #    if user && user.authenticate(params[:session][:password])
@@ -29,4 +41,4 @@ skip_before_action :authorize
     redirect_to root_url
   end
 end
-end
+
