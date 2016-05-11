@@ -2,7 +2,7 @@
         <img id="bannerTemp" src="/assets/images.jpg"/>
 <div id="background">
 
-<center><h1>Editing user</h1>
+<center>
 
 <% provide(:title, "Edit user") %>
 <h1>Update your profile</h1>
@@ -14,9 +14,7 @@
 
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
-	  
-	  <%= f.label :username %>
-	  <%= f.text_field :username, class: 'form-control' %>
+
 
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
@@ -30,12 +28,7 @@
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
 
-    <div class="gravatar_edit">
-      <%= gravatar_for @user %>
-      <a href="http://gravatar.com/emails" target="_blank">change</a>
-    </div>
+
   </div>
 </div>
 	</center></div>
-
-

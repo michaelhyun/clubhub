@@ -14,14 +14,12 @@ get 'categories/display' => 'categories#display'
 
 get 'admin/about'
 
-get 'signup' => 'users#new'
+get 'signup'  => 'users#new'
 	resources :users
-    
-get 'posts' => 'posts#index'
 
 get 'login' => 'sessions#new'
 post 'login' => 'sessions#create'
-delete 'logout' => 'sessions#delete'
+get 'logout' => 'sessions#destroy'
 	resources :users
 
 

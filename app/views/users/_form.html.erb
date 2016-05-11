@@ -19,23 +19,19 @@
 
   <div style="width:40%" class="field">
     <%= f.label :name %><br>
-	  <%= f.text_field :name, :placeholder => "Full Name" %>
-  </div>
-  <div style="width:40%" class="field">
-      <%= f.label :username %><br>
-	  <%= f.text_field :username, :placeholder => "Username" %>
+	  <%= f.text_field :name,class: 'form-control', :placeholder => "Full Name" %>
   </div>
   <div style="width:40%" class="field">
       <%= f.label :email %><br>
-	  <%= f.text_field :email, :placeholder => "sample@domain.com" %>
+	  <%= f.email_field :email,class: 'form-control', :placeholder => "sample@domain.com" %>
   </div>
   <div style="width:40%" class="field">
     <%= f.label :password %><br>
-	  <%= f.password_field :password, :placeholder => "Secret1234" %>
+	  <%= f.password_field :password, class: 'form-control', :placeholder => "********" %>
   </div>
   <div style="width:40%" class="field">
     <%= f.label :password_confirmation %><br>
-	  <%= f.password_field :password_confirmation, :placeholder => "Secret1234" %>
+	  <%= f.password_field :password_confirmation, class: 'form-control',:placeholder => "********" %>
   </div>
   <div class="actions">
     <%= f.submit %>
