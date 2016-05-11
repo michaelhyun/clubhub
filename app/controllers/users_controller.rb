@@ -33,8 +33,7 @@ layout "users"
     def create
       @user = User.new(user_params)
       if @user.save
-        log_in @user
-        flash.now[:success] = "Welcome to the ClubHub!"
+        session[:user_id] = @user.id
         redirect_to @user
       else
         render 'new'
