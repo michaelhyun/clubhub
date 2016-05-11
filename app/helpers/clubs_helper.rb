@@ -1,5 +1,7 @@
 module ClubsHelper
-    def checked
+	def ratyrate_rateable
+	end
+	def checked
         list = [Sports]
         return list
     end
