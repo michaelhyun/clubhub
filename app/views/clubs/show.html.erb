@@ -1,32 +1,29 @@
-
-
+<style>
+	h4,p{
+		padding-left:435px;
+	}
+</style>
 <br><br><br><br><br><br><br><br>
         <img id="bannerTemp" src="/assets/images.jpg"/>
 <div id="background">
-
+<br><br>
 <p id="notice"><%= notice %></p>
-
-<img src="http://www.sjsu.edu/provost/pics/SJSU%20University%20Spirit%20mark_Web_Blue.png">
-<p>
-  <strong>Club:</strong>
+<center><h1 style="font-size:50px">
   <% @club = Club.find(params[:id]) %>
   <%=@club.name%>
-  <p>
-    <h2> Admin: </h2>
-  <%=@club.admin%>
+	</h1></center>
+	<div style="float:left"><img style="padding-left:100px" src="http://www.sjsu.edu/provost/pics/SJSU%20University%20Spirit%20mark_Web_Blue.png" width="300px" height="auto"></div>
+<h4> Admin:</h4><p><%=@club.admin%></p>
+<p>
+  <h4> Category </h4>
+ <p> <%=@club.category.try(:genre)%>
 </p>
 <p>
-  <h2> Category </h2>
-  <%=@club.category.try(:genre)%>
-</p>
-<p>
-  <h2> Number of Members </h2>
-  <%=@club.numberOfMembers%>
+  <h4> Number of Members </h4>
+ <p> <%=@club.numberOfMembers%>
 </p>
 
-<h2> <%= link_to 'Make a New Review', new_review_path %> </h2>
+<h4> <%= link_to 'Make a New Review', new_review_path %> </h4>
+	<p><%= link_to 'Back', clubs_path %></p>
 
-</p>
- |
-<%= link_to 'Back', clubs_path %>
-</div>
+<br><br></div>
