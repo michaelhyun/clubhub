@@ -29,10 +29,13 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.11)
+<<<<<<< HEAD
     bcrypt (3.1.11-x64-mingw32)
     bcrypt (3.1.11-x86-mingw32)
     bootstrap-sass (2.3.1.3)
       sass (~> 3.2)
+=======
+>>>>>>> origin/ja-branch
     builder (3.2.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -115,15 +118,16 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+<<<<<<< HEAD
     tzinfo-data (1.2016.4)
       tzinfo (>= 1.0.0)
+=======
+>>>>>>> origin/ja-branch
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
 
 PLATFORMS
   ruby
-  x64-mingw32
-  x86-mingw32
 
 DEPENDENCIES
   bcrypt
@@ -142,3 +146,6 @@ DEPENDENCIES
   turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)
+
+BUNDLED WITH
+   1.11.2

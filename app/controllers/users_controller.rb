@@ -27,7 +27,16 @@ layout "users"
   # POST /users
   # POST /users.json
   def create
+<<<<<<< HEAD
 	@user = User.new
+=======
+    @user = User.new(params[:id])
+      if @user.save
+        log_in @user
+        flash[:success] = "Welcome to the Sample App!"
+        redirect_to @user
+      else 
+>>>>>>> origin/ja-branch
     respond_to do |format|
       if @user.save
 		redirect_to @user, notice: 'User was successfully created'
@@ -63,7 +72,7 @@ layout "users"
     end
   end
 
-  private
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
@@ -74,4 +83,8 @@ layout "users"
         params.require(:user).permit(:name, :username, :email, :password, :password_confirmation)
     end
 end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> origin/ja-branch
