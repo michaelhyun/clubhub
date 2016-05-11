@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Account</title>
+    <title>ClubHub</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <%= stylesheet_link_tag  "style" %>
@@ -34,25 +34,25 @@
                     <img src="/assets/codiggers_logo.png" alt="" style="width:60px;height:60px;"/>
                     <%= link_to 'ClubHub', root_path('index') %>
                     </h1>
+
 					<nav id="nav">
 						<ul>
                             <li><%= link_to 'Home', root_path('index') %></li>
                             <li> <%= link_to 'About ClubHub', '/admin/about.html' %> </li>
                             <% if logged_in? %>
-  								            <li><%= link_to 'Club Directory', clubs_path %></li>
+  								<li><%= link_to 'Club Directory', clubs_path %></li>
                             	<li><%= link_to 'Find Clubs', categories_path %></li>
-                        
-                              <li><%= link_to "Profile", current_user %></li>
-                              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-                              <li><%= link_to "Log out", logout_path, method: "destroy" %></li>
-
-							              <% else %>
-                            	<li> <%= link_to 'Sign Up', signup_path %> </li>
-								              <li> <%= link_to 'Log In', login_path %> </li>
-							              <% end %>
+                            	<li><%= link_to "Profile", current_user %></li>
+                            	<li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                            	<li><%= link_to "Log out", logout_path, method: "delete" %></li>
+							<% else %>
+                            	<li> <%= link_to 'Sign Up', new_user_path %> </li>
+								<li> <%= link_to 'Log In', login_path %> </li>
+							<% end %>
 						</ul>
 					</nav>
 				</header>
+
 
 
         <%= yield %>
