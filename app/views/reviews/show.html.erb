@@ -3,16 +3,26 @@
 <div id="background">
 
 <p id="notice"><%= notice %></p>
-
+<p>
+<% @name = Review.find(params[:id]) %>
+<% @clubName = Club.find(params[:club_id]) %>
+	<strong>Club:</strong>
+	  <%= @clubName %>
+</p>
 <p>
   <strong>Rating:</strong>
-  <%= @review.rating %>
+  <%= @name.rating %>
 </p>
 
 <p>
   <strong>Comment:</strong>
+<<<<<<< HEAD
   <%= @review.comment %>
 	</p>
+=======
+  <%= @name.comment %>
+</p>
+>>>>>>> origin/ka-branch
 
 <%= link_to 'Edit', edit_review_path(@review) %> |
 <%= link_to 'Back', reviews_path %>

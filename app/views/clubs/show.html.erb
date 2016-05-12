@@ -21,10 +21,29 @@
 <p>
   <h4> Number of Members </h4>
  <p> <%=@club.numberOfMembers%>
+<<<<<<< HEAD
 	</p>
 	
 <h4> <%= link_to 'Make a New Review', new_review_path %> </h4>
 	<p><%= link_to 'Back', clubs_path %></p>	
+=======
+</p>
+
+<h4> Reviews </h4>
+ <% @name = Club.find(params[:id]) %>
+    <% @name.reviews.each do |review| %>
+          <tr>
+            <td><%= link_to(review.comment, review_path(review.id)) %></td>
+            <td><%= review.rating %></td>
+            <td><%= review.comment %></td>
+            <td><%= review.club.try(:name) %></td>
+          </tr>
+    <% end %>
+
+  <% @club = Club.find(params[:id]) %>
+<h4> <%= link_to 'Review this club!', new_review_path, :club_id => @club.id %> </h4>
+	<p><%= link_to 'Back', clubs_path %></p>
+>>>>>>> origin/ka-branch
 
 <p>
   <h2> Club Rating </h2>

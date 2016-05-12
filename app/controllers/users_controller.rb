@@ -78,4 +78,8 @@ layout "users"
         params.require(:user).permit(:name, :email, :password)
     end
 
+<<<<<<< HEAD
   end
+=======
+  end
+>>>>>>> origin/ka-branch

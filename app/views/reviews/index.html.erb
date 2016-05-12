@@ -17,10 +17,11 @@
     <% @reviews.each do |review| %>
       <tr>
         <td><%= review.rating %></td>
-        <td><%= review.comment %></td>
+        <td><%= link_to review.comment, review_path(review.id)%></td>
+        <td><%= link_to review.club.try(:name), review.club.club_path(review.club.id) %></td>
         <td><%= link_to 'Edit', edit_review_path(review) %></td>
-		  <td><%= link_to 'Delete', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+		    <td><%= link_to 'Delete', data: {:confirm => 'Are you sure?'}, :method => :delete %></td>
+
     <% end %>
   </tbody>
 </table>
