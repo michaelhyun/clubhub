@@ -15,6 +15,7 @@ get 'clubs/display' => 'clubs#display'
 
 get 'categories/display' => 'categories#display'
 
+get 'admin/index'
 
 get 'admin/about'
 
