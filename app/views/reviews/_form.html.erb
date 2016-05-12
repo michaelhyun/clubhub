@@ -8,7 +8,6 @@
   <% if @review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
-
       <ul>
       <% @review.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -19,9 +18,10 @@
 
    <div class="field">
     <div id="star-rating"></div>
-  </div>
+   </div>
   <div class="field" style="width:10%">
    <%= f.label "Rate out of 5"%><br>
+  <div id="star-rating" id="star-rating"></div>
     <%= f.text_area :rating%>
   </div>
   <div class="field" style="width:60%">

@@ -37,7 +37,7 @@
                     </h1>
 					<nav id="nav">
 						<ul>
-                            <li><%= link_to 'Home', root_path('index') %></li>
+                            <li><%= link_to 'Home', users_path %></li>
                             <li> <%= link_to 'About ClubHub', '/admin/about.html' %> </li>
                             <% if logged_in? %>
   								            <li><%= link_to 'Club Directory', clubs_path %></li>

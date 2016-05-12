@@ -33,11 +33,12 @@
           <td><%= link_to "Write a Review", new_club_review_path(@club), class: "btn btn-danger" %></td>
       		</center>
         <% else %>
-        <h4> Reviews </h4>
+        <h4> Reviews (Rating out of 5)</h4>
           <% @reviews.each do |review| %>
             <div class="reviews">
               <div class="star-rating" data-score= <%= review.rating %> ></div>
-				<p style="font-style:italic"><%= review.rating %> - "<%= review.comment %>"</p>
+              <!-- PUT A TAB HERE -->
+              <p style = "font-style: italic;"><%= review.rating %> - "<%= review.comment %>"</p>
             </div>
           <% end %>
           <center>
@@ -48,7 +49,6 @@
 <td><%= link_to 'Edit', edit_club_path(@club) %> |
 <%= link_to 'Back', clubs_path %></td></center>
 </div>
-
 <script>
     $('.star-rating').raty({
       path: '/assets/',
