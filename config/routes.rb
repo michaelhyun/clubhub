@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
-
-  post '/rate' => 'rater#create', :as => 'rate'
+post '/rate' => 'rater#create', :as => 'rate'
   resources :reviews
 
 get 'clubs/show' => 'clubs#show'
 	resources :clubs
 	resources :categories
+
+  resources :clubs do
+    resources :reviews 
+  end 
 
 get 'clubs/display' => 'clubs#display'
 

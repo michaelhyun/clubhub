@@ -13,36 +13,51 @@
   <%=@club.name%>
 	</h1></center>
 	<div style="float:left"><img style="padding-left:100px" src="http://www.sjsu.edu/provost/pics/SJSU%20University%20Spirit%20mark_Web_Blue.png" width="300px" height="auto"></div>
-<h4> Admin:</h4><p><%=@club.admin%></p>
+
+	<div class="star-rating" data-score= <%= @avg_review %> ></div>
+        <em><%= "#{@reviews.length} review(s)" %></em>
+
+<h4> Club Admin</h4><p><%=@club.admin%></p>
 <p>
   <h4> Category </h4>
- <p> <%=@club.category.try(:genre)%>
+ <p> <%=link_to(@club.category.try(:genre), category_path(@club.category.id))%>
 </p>
-<p>
+</p>
   <h4> Number of Members </h4>
  <p> <%=@club.numberOfMembers%>
 </p>
 
-<h4> Reviews </h4>
- <% @name = Club.find(params[:id]) %>
-    <% @name.reviews.each do |review| %>
-          <tr>
-            <td><%= link_to(review.comment, review_path(review.id)) %></td>
-            <td><%= review.rating %></td>
-            <td><%= review.comment %></td>
-            <td><%= review.club.try(:name) %></td>
-          </tr>
-    <% end %>
+<!--<div class="col-md-7 col-md-offset-1">-->
+  <h4> Reviews </h4>
+        <% if @reviews.blank? %>
+          <h4>No reviews just yet, would you like to add the first!</h4>
+     		<center>
+          <td><%= link_to "Write a Review", new_club_review_path(@club), class: "btn btn-danger" %></td>
+      		</center>
+        <% else %>
+          <% @reviews.each do |review| %>
+            <div class="reviews">
+              <div class="star-rating" data-score= <%= review.rating %> ></div>
+              <p><%= review.comment %></p>
+            </div>
+          <% end %>
+          <center>
+          <td><%= link_to "Write a Review", new_club_review_path(@club), class: "btn btn-danger" %></td>
+      		</center>
+        <% end %>
 
-  <% @club = Club.find(params[:id]) %>
-<h4> <%= link_to 'Review this club!', new_review_path, :club_id => @club.id %> </h4>
-	<p><%= link_to 'Back', clubs_path %></p>
-
-<ul class="rating">
-<%(1..5).each do |i|%>
-<li class="rating_star" data-stars="data-club-id="<% @club.id%>" id="<%= "#{@club.id}_#{i}"%>""> </li>
-	<%end%>
-</ul>
-	
+<td><%= link_to 'Edit', edit_club_path(@club) %> |
+<%= link_to 'Back', clubs_path %></td>
+</div>
 
 <br><br></div>
+
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>
