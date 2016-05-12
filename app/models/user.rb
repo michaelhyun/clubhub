@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
  has_secure_password
 
   validates :password, presence: true, length: { minimum: 6 }
+
+	#Joanna's line attr- do we need for ratyrate????
+	attr_accessor :password
+	ratyrate_rater
 end

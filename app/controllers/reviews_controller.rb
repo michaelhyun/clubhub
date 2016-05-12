@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/1
   # GET /reviews/1.json
   def show
+    @avg_review = Review.average(:rating)
   end
 
   # GET /reviews/new
@@ -65,7 +66,7 @@ class ReviewsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_review
-      @review = Review.find(params[:id])
+      @review = Review.find(review_params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

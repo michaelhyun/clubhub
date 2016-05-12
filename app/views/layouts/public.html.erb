@@ -39,16 +39,15 @@
 						<ul>
                             <li><%= link_to 'Home', root_path('index') %></li>
                             <li> <%= link_to 'About ClubHub', '/admin/about.html' %> </li>
-                            <% if logged_in? %>
   								<li><%= link_to 'Club Directory', clubs_path %></li>
                             	<li><%= link_to 'Find Clubs', categories_path %></li>
-                            	<li><%= link_to "Profile", current_user %></li>
-                            	<li><%= link_to "Settings", edit_user_path(current_user) %></li>
-                            	<li><%= link_to "Log out", logout_path, method: "delete" %></li>
-							<% else %>
+							<!--edit_user_path(current_user) changed path-->
+							<li><%= link_to "Profile", categories_path %></li>
+							<!--edit_user_path(current_user) changed path-->
+							<li><%= link_to "Settings", categories_path %></li>
+                            	<li><%= link_to "Log out", logout_path, method: "delete" %></li
                             	<li> <%= link_to 'Sign Up', new_user_path %> </li>
 								<li> <%= link_to 'Log In', login_path %> </li>
-							<% end %>
 						</ul>
 					</nav>
 				</header>

@@ -2,8 +2,6 @@ class ClubsController < ApplicationController
 layout "users"
   before_action :set_club, only: [ :edit, :update, :destroy]
 
-
-
   # GET /clubs
   # GET /clubs.json
   def index
@@ -24,10 +22,7 @@ layout "users"
   # GET /clubs/1/edit
   def edit
   end
-
- 
-
-
+	
   # POST /clubs
   # POST /clubs.json
   def create
@@ -81,4 +76,3 @@ layout "users"
       params.require(:club).permit(:Name, :admin, :numberOfMembers, :category)
     end
   end
-
