@@ -27,9 +27,7 @@
   <h4> Number of Members </h4>
  <p> <%=@club.numberOfMembers%>
 </p>
-
-<!--<div class="col-md-7 col-md-offset-1">-->
-  
+<hr>
         <% if @reviews.blank? %>
           <h4>No reviews just yet, would you like to add the first!</h4>
      		<center>
@@ -46,14 +44,12 @@
           <% end %>
           <center>
           <td><%= link_to "Write a Review", new_club_review_path(@club), class: "btn btn-danger" %></td>
-      		</center>
+      		
         <% end %>
+<br>
 <td><%= link_to 'Edit', edit_club_path(@club) %> |
-<%= link_to 'Back', clubs_path %></td>
+<%= link_to 'Back', clubs_path %></td></center>
 </div>
-
-<!-- <br><br></div>
- -->
 <script>
     $('.star-rating').raty({
       path: '/assets/',
