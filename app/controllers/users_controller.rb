@@ -77,9 +77,4 @@ layout "users"
     def user_params
         params.require(:user).permit(:name, :email, :password)
     end
-
-<<<<<<< HEAD
   end
-=======
-  end
->>>>>>> origin/ka-branch

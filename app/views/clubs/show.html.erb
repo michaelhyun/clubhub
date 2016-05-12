@@ -48,6 +48,23 @@
       		</center>
         <% end %>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  <% @club = Club.find(params[:id]) %>
+<h4> <%= link_to 'Review this club!', new_review_path, :club_id => @club.id %> </h4>
+	<p><%= link_to 'Back', clubs_path %></p>
+
+<p>
+  <h2> Club Rating </h2>
+<%= rating_for @club, "rating" %>
+</p>
+
+</p>
+<center><%= link_to 'Back', clubs_path %></center>
+</div>
+=======
+>>>>>>> cdc075a786e83d7f1617b370f6b18ad6917567c9
 <td><%= link_to 'Edit', edit_club_path(@club) %> |
 <%= link_to 'Back', clubs_path %></td>
 </div>
@@ -63,3 +80,7 @@
     }
   });
 </script>
+<<<<<<< HEAD
+=======
+>>>>>>> origin/ka-branch
+>>>>>>> cdc075a786e83d7f1617b370f6b18ad6917567c9
