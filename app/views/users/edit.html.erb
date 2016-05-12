@@ -1,4 +1,10 @@
-<br><br><br><br><br><br><br><br>
+<style>label {
+   width: 1000px;
+   display: inline-block;
+   text-align: left;
+}</style>
+
+<br><br><br><br><br>
         <img id="bannerTemp" src="/assets/images.jpg"/>
 <div id="background">
 
@@ -15,15 +21,14 @@
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
 
-
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
 
       <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.password_field :password, class: 'form-control', :placeholder => "*******" %>
 
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <%= f.password_field :password_confirmation, class: 'form-control', :placeholder => "*******" %>
 
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
