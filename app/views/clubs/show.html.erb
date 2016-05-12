@@ -22,6 +22,7 @@
   <h4> Category </h4>
  <p> <%=link_to(@club.category.try(:genre), category_path(@club.category.id))%>
 </p>
+
 </p>
   <h4> Number of Members </h4>
  <p> <%=@club.numberOfMembers%>
