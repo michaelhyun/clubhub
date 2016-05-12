@@ -28,13 +28,8 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
-<<<<<<< HEAD
-    bcrypt (3.1.11-x64-mingw32)
-    bcrypt (3.1.11-x86-mingw32)
-=======
     bcrypt (3.1.11)
     bcrypt (3.1.11-x64-mingw32)
->>>>>>> origin/ka-branch
     bootstrap-sass (2.3.1.3)
       sass (~> 3.2)
     builder (3.2.2)
@@ -65,10 +60,6 @@ GEM
     multi_json (1.12.0)
     pg (0.18.4)
     pg (0.18.4-x64-mingw32)
-<<<<<<< HEAD
-    pg (0.18.4-x86-mingw32)
-=======
->>>>>>> origin/ka-branch
     rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -119,10 +110,6 @@ GEM
       sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.11)
     sqlite3 (1.3.11-x64-mingw32)
-<<<<<<< HEAD
-    sqlite3 (1.3.11-x86-mingw32)
-=======
->>>>>>> origin/ka-branch
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -136,13 +123,8 @@ GEM
       execjs (>= 0.3.0, < 3)
 
 PLATFORMS
-<<<<<<< HEAD
-  x64-mingw32
-  x86-mingw32
-=======
   ruby
   x64-mingw32
->>>>>>> origin/ka-branch
 
 DEPENDENCIES
   bcrypt
@@ -162,9 +144,6 @@ DEPENDENCIES
   turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)
-<<<<<<< HEAD
-=======
 
 BUNDLED WITH
    1.12.3
->>>>>>> origin/ka-branch
