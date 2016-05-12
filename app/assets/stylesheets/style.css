@@ -3782,6 +3782,8 @@ li {
     z-index: -1;
 }
 #background{
-    background-color:white;
-    height:100%;
+ background: white;
+ background-size: 100% 100%;  // or cover like Ben Dyer states
+ background-repeat: no-repeat;*/
+
 }

@@ -2,21 +2,22 @@
 
 <br><br><br><br><br><br><br><br>
         <img id="bannerTemp" src="/assets/images.jpg"/>
-<div id="background">
+<center>
+  <img src="/assets/SJSU_Blue.png" alt="" style="width:160px;height:160px;" align="middle;">
+  <div style="width: 550px;background:white;">
 
 <p id="notice"><%= notice %></p>
-
-<img src="http://www.sjsu.edu/provost/pics/SJSU%20University%20Spirit%20mark_Web_Blue.png">
 <p>
-  <strong>Club:</strong>
+  
+  <!--<strong>Club:</strong>-->
   <% @club = Club.find(params[:id]) %>
-  <%=@club.name%>
+  <h1><%=@club.name%></h1>
   <p>
-    <h2> Admin: </h2>
-  <%=@club.admin%>
+    <h2> Admin: <%=@club.admin%> </h2>
+  
 </p>
 <p>
-  <h2> Category </h2>
+  <h2> Category </h2> 
   <%=@club.category.try(:genre)%>
 </p>
 <p>
@@ -29,4 +30,6 @@
 </p>
  |
 <%= link_to 'Back', clubs_path %>
+
 </div>
+</center> 
