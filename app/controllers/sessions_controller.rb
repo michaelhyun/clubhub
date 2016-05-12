@@ -25,11 +25,5 @@ skip_before_action :authorize
     @current_user = nil
     redirect_to root_url
   end
-<<<<<<< HEAD
-
 
 end
-=======
-end
-
->>>>>>> fd38fe84021f700daea5366078dbf2e04929191e

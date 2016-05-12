@@ -17,6 +17,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/new
   def new
     @review = Review.new
+    @club = Club.where(id: params[:param])
   end
 
   # GET /reviews/1/edit
@@ -27,6 +28,8 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = Review.new(review_params)
+    @club = Club.where(id: params[:param])
+    #@review.club = Club.find_by_id(params[:club_id])
 
     respond_to do |format|
       if @review.save
@@ -56,6 +59,7 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1
   # DELETE /reviews/1.json
   def destroy
+    @review = Review.find(params[:id])
     @review.destroy
     respond_to do |format|
       format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
@@ -66,11 +70,11 @@ class ReviewsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_review
-      @review = Review.find(review_params[:id])
+      @review = Review.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:rating, :comment)
+      params.require(:review).permit(:rating, :comment, :club)
     end
 end

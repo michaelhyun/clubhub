@@ -3,15 +3,20 @@
 <div id="background">
 
 <p id="notice"><%= notice %></p>
-
+<p>
+<% @name = Review.find(params[:id]) %>
+<% @clubName = Club.find(params[:club_id]) %>
+	<strong>Club:</strong>
+	  <%= @clubName %>
+</p>
 <p>
   <strong>Rating:</strong>
-  <%= @review.rating %>
+  <%= @name.rating %>
 </p>
 
 <p>
   <strong>Comment:</strong>
-  <%= @review.comment %>
+  <%= @name.comment %>
 </p>
 
 <%= link_to 'Edit', edit_review_path(@review) %> |
