@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160511030729) do
+=======
+ActiveRecord::Schema.define(version: 20160511000225) do
+>>>>>>> origin/ka-branch
 
   create_table "average_caches", force: true do |t|
     t.integer  "rater_id"
