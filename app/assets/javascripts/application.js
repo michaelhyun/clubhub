@@ -10,6 +10,21 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/ka-branch
+// = require jquery
+// = require jquery_ujs
+// = require bootstrap
+// = require turbolinks
+// = require_tree .
+<<<<<<< HEAD
+=======
+=======
+=======
+>>>>>>> origin/ka-branch
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
@@ -44,3 +59,8 @@ var form_id = $(this).attr(‘id’);
 set_stars(form_id, $(‘#’ + club_id + ‘_stars’).val());
 });
 });
+<<<<<<< HEAD
+>>>>>>> fd38fe84021f700daea5366078dbf2e04929191e
+>>>>>>> origin/ka-branch
+=======
+>>>>>>> origin/ka-branch

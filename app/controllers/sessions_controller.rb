@@ -1,13 +1,8 @@
 class SessionsController < ActionController::Base
 layout "users"
 skip_before_action :authorize
-
-
   def new
   end
-
-
-
 	def create
     user = User.find_by(email: params[:session][:email].downcase)
    if user && user.authenticate(params[:session][:password])
@@ -16,9 +11,7 @@ skip_before_action :authorize
 		else
       render 'new'
 	  end
-
   end
-
 
   def destroy
     session.delete(:user_id)

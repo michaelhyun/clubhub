@@ -1,6 +1,5 @@
 class AdminController < ApplicationController
   layout "users"
-
     def index
     end
 

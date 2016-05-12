@@ -1,18 +1,49 @@
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
         <img id="bannerTemp" src="/assets/images.jpg"/>
 <div id="background">
 
 <p id="notice"><%= notice %></p>
+  
+  <div id="w">
+    <div id="content" class="clearfix">
+      <div id="userphoto"><img src="http://tr3.cbsistatic.com/fly/bundles/techrepubliccore/images/icons/standard/icon-user-default.png" alt="default avatar" width="100px"></div>
+      <h1><%= @user.name %><br> <%= @user.email %></h1>
 
-<p>
-  <strong>Name:</strong>
-	<%= @user.name %>
-</p>
-<p>
-  <strong>Username:</strong>
-	<%= @user.email %>
-</p>
+      <nav id="profiletabs">
+        <ul class="clearfix">
+          <li><a href="#bio" class="sel">Bio</a></li>
+          <li><a href="#activity">Activity</a></li>
+          <li><a href="#friends">Friends</a></li>
+          <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+        </ul>
+      </nav>
+      
+      <section id="bio">
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+		  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+      </section>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+    </div><!-- @end #content -->
+  </div><!-- @end #w -->
+
 </div>
+
+<script type="text/javascript">
+$(function(){
+  $('#profiletabs ul li a').on('click', function(e){
+    e.preventDefault();
+    var newcontent = $(this).attr('href');
+    
+    $('#profiletabs ul li a').removeClass('sel');
+    $(this).addClass('sel');
+    
+    $('#content section').each(function(){
+      if(!$(this).hasClass('hidden')) { $(this).addClass('hidden'); }
+    });
+    
+    $(newcontent).removeClass('hidden');
+  });
+});
+</script>
