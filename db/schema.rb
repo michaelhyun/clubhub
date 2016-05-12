@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160511000225) do
 
   create_table "average_caches", force: true do |t|
@@ -90,9 +91,10 @@ ActiveRecord::Schema.define(version: 20160511000225) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "username"
     t.string   "email"
     t.string   "salt"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
