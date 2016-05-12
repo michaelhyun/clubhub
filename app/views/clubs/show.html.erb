@@ -13,27 +13,42 @@
   <%=@club.name%>
 	</h1></center>
 	<div style="float:left"><img style="padding-left:100px" src="http://www.sjsu.edu/provost/pics/SJSU%20University%20Spirit%20mark_Web_Blue.png" width="300px" height="auto"></div>
-<h4> Admin:</h4><p><%=@club.admin%></p>
+
+	<div class="star-rating" data-score= <%= @avg_review %> ></div>
+        <em><%= "#{@reviews.length} review(s)" %></em>
+
+<h4> Club Admin</h4><p><%=@club.admin%></p>
 <p>
   <h4> Category </h4>
- <p> <%=@club.category.try(:genre)%>
+ <p> <%=link_to(@club.category.try(:genre), category_path(@club.category.id))%>
 </p>
-<p>
+</p>
   <h4> Number of Members </h4>
  <p> <%=@club.numberOfMembers%>
 </p>
 
-<h4> Reviews </h4>
- <% @name = Club.find(params[:id]) %>
-    <% @name.reviews.each do |review| %>
-          <tr>
-            <td><%= link_to(review.comment, review_path(review.id)) %></td>
-            <td><%= review.rating %></td>
-            <td><%= review.comment %></td>
-            <td><%= review.club.try(:name) %></td>
-          </tr>
-    <% end %>
+<!--<div class="col-md-7 col-md-offset-1">-->
+  
+        <% if @reviews.blank? %>
+          <h4>No reviews just yet, would you like to add the first!</h4>
+     		<center>
+          <td><%= link_to "Write a Review", new_club_review_path(@club), class: "btn btn-danger" %></td>
+      		</center>
+        <% else %>
+        <h4> Reviews </h4>
+          <% @reviews.each do |review| %>
+            <div class="reviews">
+              <div class="star-rating" data-score= <%= review.rating %> ></div>
+              <!-- PUT A TAB HERE -->
+              <p><i><%= review.rating %> - "<%= review.comment %>"</i></p>
+            </div>
+          <% end %>
+          <center>
+          <td><%= link_to "Write a Review", new_club_review_path(@club), class: "btn btn-danger" %></td>
+      		</center>
+        <% end %>
 
+<<<<<<< HEAD
   <% @club = Club.find(params[:id]) %>
 <h4> <%= link_to 'Review this club!', new_review_path, :club_id => @club.id %> </h4>
 	<p><%= link_to 'Back', clubs_path %></p>
@@ -46,3 +61,20 @@
 </p>
 <center><%= link_to 'Back', clubs_path %></center>
 </div>
+=======
+<td><%= link_to 'Edit', edit_club_path(@club) %> |
+<%= link_to 'Back', clubs_path %></td>
+</div>
+
+<br><br></div>
+
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>
+>>>>>>> origin/ka-branch

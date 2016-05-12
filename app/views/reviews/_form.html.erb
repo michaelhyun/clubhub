@@ -4,9 +4,12 @@
    text-align: left;
 }</style>
 
-<%= simple_form_for(@review) do |f| %>
-  <%= f.error_notification %>
+<%= form_for([@club, @review]) do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
+<<<<<<< HEAD
 <div class="field">
     <div id="star-rating"></div>
   </div>
@@ -15,11 +18,30 @@
     <%= f.input :rating, :placeholder => "#/5" %>
 	  <%= f.input :comment, :placeholder => "Write reviews here..." %>
   </div>
+=======
+      <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+>>>>>>> origin/ka-branch
 
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-
+   <div class="field">
+    <div id="star-rating"></div>
+  </div>
+  <div class="field" style="width:10%">
+   <%= f.label "Rate out of 5"%><br>
+    <%= f.text_area :rating%>
+  </div>
+  <div class="field" style="width:60%">
+    <%= f.label :comment %><br>
+    <%= f.text_area :comment %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
   </div>
 <% end %>
 
@@ -29,3 +51,16 @@
     scoreName: 'review[rating]'
   });
 </script>
+
+<<<<<<< HEAD
+  </div>
+<% end %>
+
+<script>
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: 'review[rating]'
+  });
+</script>
+=======
+>>>>>>> origin/ka-branch
