@@ -31,37 +31,25 @@
 			<!-- Header -->
 				<header id="header" class="alt">
                     <h1>
-                    <img src="/assets/codiggers_logo.png" alt="" style="width:60px;height:60px;"/>
+                    <img src="/assets/codiggers_logo.png" alt="" style="width:40px;height:40px;"/>
                     <%= link_to 'ClubHub', root_path('index') %>
                     </h1>
 					<nav id="nav">
 						<ul>
                             <li><%= link_to 'Home', root_path('index') %></li>
                             <li> <%= link_to 'About ClubHub', '/admin/about.html' %> </li>
-<<<<<<< HEAD
-  								<li><%= link_to 'Club Directory', clubs_path %></li>
-                            	<li><%= link_to 'Find Clubs', categories_path %></li>
-							<!--edit_user_path(current_user) changed path-->
-							<li><%= link_to "Profile", categories_path %></li>
-							<!--edit_user_path(current_user) changed path-->
-							<li><%= link_to "Settings", categories_path %></li>
-                            	<li><%= link_to "Log out", logout_path, method: "delete" %></li
-                            	<li> <%= link_to 'Sign Up', new_user_path %> </li>
-								<li> <%= link_to 'Log In', login_path %> </li>
-=======
                             <% if logged_in? %>
   								            <li><%= link_to 'Club Directory', clubs_path %></li>
                             	<li><%= link_to 'Find Clubs', categories_path %></li>
                         
                               <li><%= link_to "Profile", current_user %></li>
-                              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                              
                               <li><%= link_to "Log out", logout_path, method: "destroy" %></li>
 
 							              <% else %>
                             	<li> <%= link_to 'Sign Up', signup_path %> </li>
 								              <li> <%= link_to 'Log In', login_path %> </li>
 							              <% end %>
->>>>>>> ea78d7d8fa5cae6f210cc354a000eacf3e020e8e
 						</ul>
 					</nav>
 				</header>
