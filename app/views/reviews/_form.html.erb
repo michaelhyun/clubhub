@@ -9,16 +9,6 @@
     <div id="error_explanation">
       <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
-<<<<<<< HEAD
-<div class="field">
-    <div id="star-rating"></div>
-  </div>
-  <div class="form-inputs" style="width:60%">
-    
-    <%= f.input :rating, :placeholder => "#/5" %>
-	  <%= f.input :comment, :placeholder => "Write reviews here..." %>
-  </div>
-=======
       <ul>
       <% @review.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -26,7 +16,6 @@
       </ul>
     </div>
   <% end %>
->>>>>>> origin/ka-branch
 
    <div class="field">
     <div id="star-rating"></div>
@@ -51,16 +40,3 @@
     scoreName: 'review[rating]'
   });
 </script>
-
-<<<<<<< HEAD
-  </div>
-<% end %>
-
-<script>
-  $('#star-rating').raty({
-    path: '/assets/',
-    scoreName: 'review[rating]'
-  });
-</script>
-=======
->>>>>>> origin/ka-branch
