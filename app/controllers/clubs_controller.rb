@@ -12,7 +12,7 @@ layout "users"
   # GET /clubs/1.json
   def show
     #@club = Club.where(name: params[:param])
-    @reviews = Review.where(club_id: @club.object_id)
+    @reviews = Review.where(club_id: params[:id])
     #.order("created_at DESC")
 
     if @reviews.blank?
@@ -26,6 +26,7 @@ layout "users"
   # GET /clubs/new
   def new
     @club = Club.new
+    #@reviews = @club.reviews.new
     #@club = current_user.clubs.build
   end
 

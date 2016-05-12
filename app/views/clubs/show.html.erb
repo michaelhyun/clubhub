@@ -28,17 +28,19 @@
 </p>
 
 <!--<div class="col-md-7 col-md-offset-1">-->
-  <h4> Reviews </h4>
+  
         <% if @reviews.blank? %>
           <h4>No reviews just yet, would you like to add the first!</h4>
      		<center>
           <td><%= link_to "Write a Review", new_club_review_path(@club), class: "btn btn-danger" %></td>
       		</center>
         <% else %>
+        <h4> Reviews </h4>
           <% @reviews.each do |review| %>
             <div class="reviews">
               <div class="star-rating" data-score= <%= review.rating %> ></div>
-              <p><%= review.comment %></p>
+              <!-- PUT A TAB HERE -->
+              <p><i><%= review.rating %> - "<%= review.comment %>"</i></p>
             </div>
           <% end %>
           <center>
