@@ -24,17 +24,18 @@
         }
     </style>
 </head>
-
-    <% if flash[:notice] -%>
-      <p class="notice"><%= flash[:notice] %></p>
-    <% end -%>
-    <% if flash[:error] -%>
-      <p class="error"><%= flash[:error] %></p>
-    <% end -%>
-
     <body class="landing">
 		<div id="page-wrapper">
+
     	<section id="banner">
+            
+					<center>
+					<% if flash[:notice] -%>
+					<h1 class="notice"><%= flash[:notice] %></h1>
+					<% end -%>
+					<% if flash[:error] -%>
+					<h1 class="error"><%= flash[:error] %></h1>
+					<% end -%></center>
 					<h1 style="font-size:150px">ClubHub</h1>
 					<p style="color:white">Designed by &copy;Codiggers</p>
 
@@ -45,14 +46,13 @@
 
 					<section class="box special">
 						<header class="major">
-							<h2>Introducing the ultimate SJSU club organization finder</h2>
+							<h2>Introducing the ultimate SJSU club organization finder.</h2>
 							<p>SJSU ClubHub was designed in order to provide students at SJSU the opportunity to get involved in the variety of student organizations on campus. </p>
 						</header>
 						<span class="image featured"><img src="/assets/SJSU.jpg" alt="" /></span>
 					</section>
 
-
-<center><h2>Featured clubs for the month of May</h2></center>
+                    <center><h2>Featured clubs for the month of May</h2></center>
 					<div class="row">
                         <div class="6u 12u(narrower)">
 
@@ -61,7 +61,7 @@
 								<h3>Society of Women Engineers</h3>
 								<p>Lighting the way for women in engineering.</p>
 								<ul class="actions">
-									<li><a href="/clubs/339" class="button alt">Learn More</a></li>
+									<li><a href="#" class="button alt">Learn More</a></li>
 								</ul>
 							</section>
 
@@ -69,7 +69,7 @@
 						<div class="6u 12u(narrower)">
 
 							<section class="box special">
-								<img src="/assets/codiggers_logo.png" width="260px" height="260"/>
+								<img src="/assets/codiggers_logo.png" width="250px" height="auto"/>
 								<h3>Codiggers</h3>
 								<p>Codiggers is one of the hottest clubs on SJSU's campus! With only 5 members, Codiggers is a progressive group that makes cool websites like the one you're on right now!</p>
 								<ul class="actions">
