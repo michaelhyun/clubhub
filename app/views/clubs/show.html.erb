@@ -35,42 +35,24 @@
           <td><%= link_to "Write a Review", new_club_review_path(@club), class: "btn btn-danger" %></td>
       		</center>
         <% else %>
-        <h4> Reviews </h4>
+        <h4> Reviews (Rating out of 5)</h4>
           <% @reviews.each do |review| %>
             <div class="reviews">
               <div class="star-rating" data-score= <%= review.rating %> ></div>
               <!-- PUT A TAB HERE -->
-              <p><i><%= review.rating %> - "<%= review.comment %>"</i></p>
+              <p style = "font-style: italic;"><%= review.rating %> - "<%= review.comment %>"</p>
             </div>
           <% end %>
           <center>
           <td><%= link_to "Write a Review", new_club_review_path(@club), class: "btn btn-danger" %></td>
       		</center>
         <% end %>
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  <% @club = Club.find(params[:id]) %>
-<h4> <%= link_to 'Review this club!', new_review_path, :club_id => @club.id %> </h4>
-	<p><%= link_to 'Back', clubs_path %></p>
-
-<p>
-  <h2> Club Rating </h2>
-<%= rating_for @club, "rating" %>
-</p>
-
-</p>
-<center><%= link_to 'Back', clubs_path %></center>
-</div>
-=======
->>>>>>> cdc075a786e83d7f1617b370f6b18ad6917567c9
 <td><%= link_to 'Edit', edit_club_path(@club) %> |
 <%= link_to 'Back', clubs_path %></td>
 </div>
 
-<br><br></div>
-
+<!-- <br><br></div>
+ -->
 <script>
     $('.star-rating').raty({
       path: '/assets/',
@@ -80,7 +62,3 @@
     }
   });
 </script>
-<<<<<<< HEAD
-=======
->>>>>>> origin/ka-branch
->>>>>>> cdc075a786e83d7f1617b370f6b18ad6917567c9
