@@ -32,5 +32,14 @@
 	<%end%>
 </ul>
 	
+	<% form_id = “club_#{club.id}_rating” %>
+<%= form_for movie.ratings.last || club.ratings.build, :html => {:id => form_id , :class => “star_rating_form”} do |f| %>
+<%= f.hidden_field :club_id %>
+<%= f.hidden_field :stars, :id => form_id + “_stars” %>
+<% end %>
+<% (1..5).each do |i| %>
+<li id=”<%= form_id %>_<%= i %>” data-stars=”<%= i %>” data-form-id=”<%= form_id %>”></li>
+<% end %>
+	
 
 <br><br></div>
