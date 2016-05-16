@@ -29,8 +29,6 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.11)
-    bcrypt (3.1.11-x64-mingw32)
-    bcrypt (3.1.11-x86-mingw32)
     bootstrap-sass (2.3.1.3)
       sass (~> 3.2)
     builder (3.2.2)
@@ -60,8 +58,6 @@ GEM
     minitest (5.8.4)
     multi_json (1.12.0)
     pg (2.5.2)
-    pg (2.5.2-x64-mingw32)
-    pg (2.5.2-x86-mingw32)
     rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -118,15 +114,11 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2016.4)
-      tzinfo (>= 1.0.0)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
 
 PLATFORMS
   ruby
-  x64-mingw32
-  x86-mingw32
 
 DEPENDENCIES
   bcrypt
@@ -134,7 +126,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
-  pg (= 2.5.2)
+  pg
   rack (= 1.5.5)
   rails (= 4.1.8)
   rails_12factor

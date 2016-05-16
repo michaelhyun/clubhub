@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 group :production do
 	gem 'pg'
-	 gem 'rails_12factor' 
+	gem 'rails_12factor' 
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -14,7 +14,7 @@ gem 'rails', '4.1.8'
 gem 'rack', '1.5.5'
 
 # gems required by Heroku
-#gem 'pg', group: :production --
+#gem 'pg', group: :production
 #gem 'rails_12factor', group: :production --
 
 gem 'simple_form'
@@ -46,7 +46,9 @@ gem 'bcrypt'
 
 group :development, :test do
   gem 'sqlite3' 
-
+  gem 'sass-rails'
+  gem 'https'
+  gem 'http-cookie'
 end
 # Use unicorn as the app server
 # gem 'unicorn'
