@@ -3781,6 +3781,13 @@ li {
     z-index: -1;
 }
 #background{
+<<<<<<< HEAD
+ background: white;
+ background-size: 100% 100%;  // or cover like Ben Dyer states
+ background-repeat: no-repeat;*/
+
+}
+=======
     background-color:white;
     height:100%;
 }
@@ -4064,3 +4071,4 @@ a:hover { text-decoration: underline; }
  
 html[xmlns] .clearfix { display: block; }
 * html .clearfix { height: 1%; }
+>>>>>>> e3f8665cbbad1456e62d74331dc6576a301232d9
