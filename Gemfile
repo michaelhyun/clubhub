@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
-
+group :production do
+	gem 'pg'
+	 gem 'rails_12factor' 
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
@@ -40,10 +43,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
-group :production do
-	gem 'pg'
-	 gem 'rails_12factor' 
-end
 
 group :development, :test do
   gem 'sqlite3' 
