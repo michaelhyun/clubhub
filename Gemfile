@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+#source 'https://rubygems.org'
 group :production do
 	gem 'pg'
 	gem 'rails_12factor' 
@@ -45,10 +45,7 @@ gem 'bcrypt'
 
 
 group :development, :test do
-  gem 'sqlite3' 
-  gem 'sass-rails'
-  gem 'https'
-  gem 'http-cookie'
+ gem 'sqlite3' 
 end
 # Use unicorn as the app server
 # gem 'unicorn'
