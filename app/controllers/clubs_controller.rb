@@ -2,8 +2,6 @@ class ClubsController < ApplicationController
 layout "users"
   before_action :set_club, only: [ :edit, :update, :destroy]
 
-
-
   # GET /clubs
   # GET /clubs.json
   def index
@@ -13,25 +11,34 @@ layout "users"
   # GET /clubs/1
   # GET /clubs/1.json
   def show
-    @club = Club.where(name: params[:param])
+    #@club = Club.where(name: params[:param])
+    @reviews = Review.where(club_id: params[:id])
+    #.order("created_at DESC")
+
+    if @reviews.blank?
+      @avg_revew = 0
+    else
+      @avg_review = @reviews.average(:rating)
+      #.round(2)
+    end
   end
 
   # GET /clubs/new
   def new
     @club = Club.new
+    #@reviews = @club.reviews.new
+    #@club = current_user.clubs.build
   end
 
   # GET /clubs/1/edit
   def edit
   end
-
- 
-
-
+	
   # POST /clubs
   # POST /clubs.json
   def create
     @club = Club.new(club_params)
+    #@club = current_user.clubs.build(club_params)
 
     respond_to do |format|
       if @club.save
@@ -61,7 +68,6 @@ layout "users"
   # DELETE /clubs/1
   # DELETE /clubs/1.json
   def destroy
-    @club = Club.find(params[:id])
     @club.destroy
     respond_to do |format|
       format.html { redirect_to clubs_url, notice: 'Club was successfully destroyed.' }
@@ -78,7 +84,6 @@ layout "users"
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def club_params
-      params.require(:club).permit(:Name, :admin, :numberOfMembers, :category)
+      params.require(:club).permit(:Name, :admin, :numberOfMembers, :category, :reviews, :rating)
     end
   end
-

@@ -15,6 +15,8 @@ gem 'rails_12factor', group: :production
 gem 'simple_form'
 gem 'bootstrap-sass', '~>2.3.1.0'
 
+gem 'ratyrate'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
