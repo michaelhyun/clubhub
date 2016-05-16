@@ -42,14 +42,11 @@ gem 'bcrypt'
 
 group :production do
 	gem 'pg'
-	gem 'rails_12factor'
-	gem 'dalli'
-
 end
+
 group :development, :test do
   gem 'sqlite3' 
- # gem 'http'
- # gem 'sass-rails'
+
 end
 
 # Use unicorn as the app server
