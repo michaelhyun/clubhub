@@ -4,17 +4,13 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
-#gem 'sqlite3', '1.3.11', group: [:development, :test]
+gem 'sqlite3', '1.3.11', group: [:development, :test]
 
 gem 'rack', '1.5.5'
 
-group :production do
-	gem 'pg'
-	gem 'rails_12factor' 
-end
 # gems required by Heroku
-#gem 'pg', group: :production
-#gem 'rails_12factor', group: :production
+gem 'pg', group: :production
+gem 'rails_12factor', group: :production
 
 gem 'simple_form'
 gem 'bootstrap-sass', '~>2.3.1.0'
@@ -41,10 +37,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
-
-group :development, :test do
-	gem 'sqlite3'
-end
 
 
 # Use unicorn as the app server
