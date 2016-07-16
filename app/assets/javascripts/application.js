@@ -10,7 +10,38 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+// = require jquery
+// = require jquery_ujs
+// = require bootstrap
+// = require turbolinks
+// = require_tree .
+var set_stars = function(club_id, stars) {
+	for(i=1; i <= 5; i++){
+		if(i <= stars){
+			$(‘#’ + club_id + ‘_’ + i).addClass(“on”);
+			  } else {
+			  $(‘#’ + club_id + ‘_’ + i).removeClass(“on”);
+			  }
+			  }
+}
+
+$(function() {
+$(‘.rating_star’).click(function() {
+var star = $(this);
+var form_id = star.attr(“data-club-id”);
+var stars = star.attr(“data-stars”);
+
+$(‘#’ + club_id + ‘_stars’).val(stars);
+
+$.ajax({
+type: “post”,
+url: $(‘#’ + club_id).attr(‘action’),
+data: $(‘#’ + club_id).serialize()
+})
+});
+
+$(‘.star_rating_form’).each(function() {
+var form_id = $(this).attr(‘id’);
+set_stars(form_id, $(‘#’ + club_id + ‘_stars’).val());
+});
+});

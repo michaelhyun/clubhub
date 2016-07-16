@@ -1,7 +1,6 @@
 class ClubsController < ApplicationController
-  before_action :set_club, only: [:show, :edit, :update, :destroy]
-
-
+layout "users"
+  before_action :set_club, only: [ :edit, :update, :destroy]
 
   # GET /clubs
   # GET /clubs.json
@@ -12,24 +11,34 @@ class ClubsController < ApplicationController
   # GET /clubs/1
   # GET /clubs/1.json
   def show
+    #@club = Club.where(name: params[:param])
+    @reviews = Review.where(club_id: params[:id])
+    #.order("created_at DESC")
+
+    if @reviews.blank?
+      @avg_revew = 0
+    else
+      @avg_review = @reviews.average(:rating)
+      #.round(2)
+    end
   end
 
   # GET /clubs/new
   def new
     @club = Club.new
+    #@reviews = @club.reviews.new
+    #@club = current_user.clubs.build
   end
 
   # GET /clubs/1/edit
   def edit
   end
-
- 
-
-
+	
   # POST /clubs
   # POST /clubs.json
   def create
     @club = Club.new(club_params)
+    #@club = current_user.clubs.build(club_params)
 
     respond_to do |format|
       if @club.save
@@ -66,35 +75,15 @@ class ClubsController < ApplicationController
     end
   end
 
-
-  def display
-
-    list_of_categories = Array.new #creates a new Array
-
-    list_of_categories << checked #adds all checked categories into the array
-
-    list_of_categories.each do |category| 
-      print(category) #prints the names of the clubs within those categories
-    end
-  end
-
-
-
   private
     # Use callbacks to share common setup or constraints between actions.
+
     def set_club
       @club = Club.find(params[:id])
-
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def club_params
-      params.require(:club).permit(:Name, :Admin, :NumberOfMembers, :category)
+      params.require(:club).permit(:Name, :admin, :numberOfMembers, :category, :reviews, :rating)
     end
   end
-
-
-
-
-
-  

@@ -1,3 +1,9 @@
+<style>label {
+   width: 1000px;
+   display: inline-block;
+   text-align: left;
+}</style>
+
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -11,19 +17,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div style="width:40%" class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+	  <%= f.text_field :name,class: 'form-control', :placeholder => "Full Name" %>
   </div>
-  <div class="field">
+  <div style="width:40%" class="field">
+      <%= f.label :email %><br>
+	  <%= f.email_field :email,class: 'form-control', :placeholder => "sample@domain.com" %>
+  </div>
+  <div style="width:40%" class="field">
     <%= f.label :password %><br>
-    <%= f.password_field :password %>
+	  <%= f.password_field :password, class: 'form-control', :placeholder => "********" %>
   </div>
-  <div class="field">
+  <div style="width:40%" class="field">
     <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
+	  <%= f.password_field :password_confirmation, class: 'form-control',:placeholder => "********" %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+    <% end %>

@@ -1,39 +1,40 @@
 Rails.application.routes.draw do
-  resources :clubs
-  resources :categories
 
-  get 'clubs/display' => 'clubs#display'
-  
-  get 'admin/index'
+post '/rate' => 'rater#create', :as => 'rate'
+  resources :reviews
 
-  get 'sessions/new'
+get 'clubs/show' => 'clubs#show'
+	resources :clubs
+	resources :categories
 
-  get "sessions/create"
+  resources :clubs do
+    resources :reviews 
+  end 
 
-  get "sessions/destroy"
+get 'clubs/display' => 'clubs#display'
 
-  resources :users
-  resources :posts
-    
+get 'categories/display' => 'categories#display'
+
+get 'admin/index'
+
+get 'admin/about'
+
+get 'signup'  => 'users#new'
+	resources :users
+
+get 'login' => 'sessions#new'
+post 'login' => 'sessions#create'
+get 'logout' => 'sessions#destroy'
+	resources :users
 
 
-get 'admin' => 'admin#index'
-get 'orgpages/index' => 'orgpages#org'
-
-controller :sessions do 
-get 'login' => :new
-post 'login' => :create
-delete 'logout' => :destroy
-
-end
-resources :orgpages
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
 
-  root 'posts#index'
+root 'admin#index' #this is the homepage!
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -83,5 +84,5 @@ resources :orgpages
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
- 
+
 end

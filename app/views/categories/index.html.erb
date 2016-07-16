@@ -1,19 +1,19 @@
+<br><br><br><br><br>
+        <img id="bannerTemp" src="/assets/images.jpg"/>
+<div id="background">
+
 <center>
+    <br><br>
 <h1>Search By Category</h1>
+    <table style="width:60%">
+    <!-- <tr> -->
+      <tbody>
+        <% @categories.each do |category| %>
+          <tr>
+            <td><%= link_to(category.genre, category_path(category.id)) %></td>
+          </tr>
+        <% end %>
+      </tbody>
 
-<table>
-  <thead>
-    <tr>
-
-      <th><h2>Genre</h2></th>
-      <th colspan="6"></th>
-    </tr>
-
-  </thead>
-</table>
-<p><%= link_to 'Sports', clubs_url() %> </p>
-<p><%= link_to 'Multicultural', clubs_url() %> </p>
-<p><%= link_to 'Engineering', clubs_url() %> </p>
-<p><%= link_to 'Science', clubs_url() %> </p>
-<br>
-</center>
+    </table>
+    </center></div>
